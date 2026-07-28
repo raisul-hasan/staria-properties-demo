@@ -1,0 +1,44 @@
+name: staria-properties
+region: sgp
+services:
+  - name: backend
+    environment_slug: node-js
+    dockerfile_path: backend/Dockerfile
+    source_dir: backend
+    github:
+      branch: main
+      deploy_on_push: true
+    http_port: 5000
+    instance_count: 1
+    instance_size_slug: basic-xxs
+    health_check:
+      http_path: /health
+      initial_delay_seconds: 15
+      period_seconds: 10
+      response_timeout_seconds: 5
+      failure_threshold: 3
+    envs:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: "5000"
+      - key: API_PREFIX
+        value: /api/v1
+      - key: DATABASE_URL
+        scope: RUN_AND_BUILD
+        value: ${staria-db.DATABASE_URL}
+      - key: JWT_ACCESS_SECRET
+        type: SECRET
+      - key: JWT_REFRESH_SECRET
+        type: SECRET
+      - key: CORS_ORIGIN
+        value: "*"
+      - key: LOG_LEVEL
+        value: info
+
+databases:
+  - name: staria-db
+    engine: PG
+    version: "16"
+    production: true
+    cluster_name: staria-db-cluster
