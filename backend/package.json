@@ -38,6 +38,8 @@
     "nodemailer": "^9.0.3",
     "swagger-jsdoc": "^6.2.8",
     "swagger-ui-express": "^5.0.1",
+    "prisma": "^6.0.0",
+    "tsx": "^4.19.2",
     "winston": "^3.17.0",
     "zod": "^3.24.1"
   },
@@ -52,8 +54,6 @@
     "@types/nodemailer": "^8.0.1",
     "@types/swagger-jsdoc": "^6.0.4",
     "@types/swagger-ui-express": "^4.1.7",
-    "prisma": "^6.0.0",
-    "tsx": "^4.19.2",
     "typescript": "^5.7.2"
   },
   "engines": {
