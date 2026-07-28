@@ -6,7 +6,7 @@ npx prisma migrate deploy
 
 if [ "$RUN_SEED" = "true" ]; then
   echo "==> Seeding Database..."
-  npx prisma db seed
+  node dist/prisma/seed.js
 fi
 
 echo "==> Starting Production Backend Application..."
