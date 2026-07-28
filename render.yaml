@@ -1,63 +1,25 @@
 services:
   - type: web
-    name: staria-properties-demo
-    runtime: node
+    name: staria-backend
+    env: docker
     region: singapore
     plan: free
-    buildCommand: npm ci --include=dev --prefix backend && npm run db:generate --prefix backend && npm run build --prefix backend && npm ci --include=dev --prefix frontend && npm run build --prefix frontend
-    startCommand: npm run db:migrate --prefix backend && npm run db:seed --prefix backend && npm start --prefix backend
+    dockerContext: .
+    dockerfilePath: ./backend/Dockerfile
     healthCheckPath: /health
     autoDeployTrigger: commit
     envVars:
-      - key: NODE_VERSION
-        value: 22.18.0
-      - key: NODE_ENV
-        value: production
-      - key: PORT
-        value: 10000
-      - key: API_PREFIX
-        value: /api/v1
       - key: DATABASE_URL
         sync: false
+      - key: NODE_ENV
+        value: production
+      - key: API_PREFIX
+        value: /api/v1
       - key: JWT_ACCESS_SECRET
         generateValue: true
       - key: JWT_REFRESH_SECRET
         generateValue: true
-      - key: JWT_ACCESS_EXPIRES_IN
-        value: 15m
-      - key: JWT_REFRESH_EXPIRES_IN
-        value: 7d
-      - key: JWT_COOKIE_SECURE
-        value: "true"
-      - key: COOKIE_SAME_SITE
-        value: lax
-      - key: FRONTEND_URL
-        value: https://staria-properties-demo.onrender.com
-      - key: ADMIN_APP_URL
-        value: https://staria-properties-demo.onrender.com/admin
       - key: CORS_ORIGIN
-        value: https://staria-properties-demo.onrender.com
-      - key: ENABLE_REGISTRATION
-        value: "false"
-      - key: RECAPTCHA_REQUIRED
-        value: "false"
-      - key: LOG_LEVEL
-        value: info
-      - key: SEED_ADMIN_NAME
-        value: Staria Demo Owner
-      - key: SEED_ADMIN_EMAIL
-        value: owner@staria.demo
-      - key: SEED_ADMIN_PASSWORD
-        sync: false
-      - key: SEED_REVIEWER_NAME
-        value: Shareholder Reviewer
-      - key: SEED_REVIEWER_EMAIL
-        value: reviewer@staria.demo
-      - key: SEED_REVIEWER_PASSWORD
-        sync: false
-      - key: VITE_API_URL
-        value: /api/v1
-      - key: VITE_SITE_URL
-        value: https://staria-properties-demo.onrender.com
-      - key: VITE_ALLOW_INDEXING
-        value: "false"
+        value: "*"
+      - key: RUN_SEED
+        value: "true"
