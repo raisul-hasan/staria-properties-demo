@@ -71,32 +71,32 @@ if (env.NODE_ENV === "production") {
   const frontendIndex = path.join(frontendDist, "index.html");
 
   if (!existsSync(frontendIndex)) {
-    throw new Error(`Production frontend was not found at ${frontendIndex}`);
-  }
-
-  app.use(
-    express.static(frontendDist, {
-      index: false,
-      maxAge: "1h",
-      setHeaders: (res, filePath) => {
-        if (filePath.endsWith("index.html")) {
-          res.setHeader("Cache-Control", "no-cache");
-        } else if (filePath.includes(`${path.sep}assets${path.sep}`)) {
-          res.setHeader("Cache-Control", "public, max-age=31536000, immutable");
+    console.warn(`Production frontend was not found at ${frontendIndex}. Skipping static file serving.`);
+  } else {
+    app.use(
+      express.static(frontendDist, {
+        index: false,
+        maxAge: "1h",
+        setHeaders: (res, filePath) => {
+          if (filePath.endsWith("index.html")) {
+            res.setHeader("Cache-Control", "no-cache");
+          } else if (filePath.includes(`${path.sep}assets${path.sep}`)) {
+            res.setHeader("Cache-Control", "public, max-age=31536000, immutable");
+          }
         }
-      }
-    })
-  );
+      })
+    );
 
-  app.get("*", (req, res, next) => {
-    const serverPathPrefixes = [env.API_PREFIX, "/api-docs", "/health"];
-    if (serverPathPrefixes.some((prefix) => req.path.startsWith(prefix))) {
-      next();
-      return;
-    }
-    res.setHeader("Cache-Control", "no-cache");
-    res.sendFile(frontendIndex);
-  });
+    app.get("*", (req, res, next) => {
+      const serverPathPrefixes = [env.API_PREFIX, "/api-docs", "/health"];
+      if (serverPathPrefixes.some((prefix) => req.path.startsWith(prefix))) {
+        next();
+        return;
+      }
+      res.setHeader("Cache-Control", "no-cache");
+      res.sendFile(frontendIndex);
+    });
+  }
 }
 
 app.use(notFound);
