@@ -5,22 +5,20 @@ FROM node:20-alpine AS builder
 
 WORKDIR /app
 
-# Copy package files & prisma schema
-COPY package*.json ./
-COPY prisma ./prisma/
+# Copy package files & prisma schema (supports root or backend subfolder build context)
+COPY package*.json backend/package*.json* ./
+COPY prisma* backend/prisma* ./prisma/
 
 # Install dependencies
 RUN npm ci
 
 # Copy source code
 COPY . .
+RUN if [ -d "backend" ]; then cp -a backend/. .; fi
 
 # Generate Prisma Client & compile TypeScript
 RUN npm run db:generate
 RUN npm run build
-
-# Prune devDependencies for production image
-RUN npm prune --production
 
 # ==========================================
 # Stage 2: Production Runner Image
