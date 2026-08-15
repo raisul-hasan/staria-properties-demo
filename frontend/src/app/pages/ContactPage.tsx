@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { MapPin, Phone, Mail, Send, CheckCheck } from "lucide-react";
+import { GoogleMapEmbed } from "../components/shared/GoogleMapEmbed";
+import { MAP_COORDINATES } from "../services/contactDetails";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({ name: "", phone: "", email: "", message: "" });
@@ -48,22 +50,7 @@ export default function ContactPage() {
           {/* Map / contact info */}
           <motion.div initial={{ opacity: 0, x: -44 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, margin: "-60px" }} transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
             className="relative rounded-3xl overflow-hidden" style={{ background: "#082D1C", minHeight: "540px" }}>
-            <div className="absolute inset-0" style={{ backgroundImage: "linear-gradient(rgba(255,255,255,0.045) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.045) 1px, transparent 1px)", backgroundSize: "56px 56px" }} />
-            <div className="absolute inset-0" style={{ background: "radial-gradient(circle 280px at 50% 46%, rgba(11, 94, 60,0.18) 0%, transparent 100%)" }} />
-
-            <div className="absolute inset-0 flex flex-col items-center justify-center pb-12">
-              <div className="relative flex items-center justify-center mb-8">
-                <span className="absolute w-[90px] h-[90px] rounded-full animate-ping" style={{ background: "rgba(11, 94, 60,0.18)" }} />
-                <span className="absolute w-[64px] h-[64px] rounded-full" style={{ background: "rgba(11, 94, 60,0.22)" }} />
-                <div className="relative z-10 w-[52px] h-[52px] rounded-full bg-[#0B5E3C] flex items-center justify-center" style={{ boxShadow: "0 0 36px rgba(11, 94, 60,0.7)" }}>
-                  <MapPin size={22} className="text-white" />
-                </div>
-              </div>
-              <div className="bg-white/[0.06] border border-white/[0.09] rounded-2xl px-8 py-5 text-center backdrop-blur-sm">
-                <p className="text-white text-[0.92rem] font-semibold mb-1.5" style={{ fontFamily: "'DM Sans', sans-serif" }}>STARIA Headquarters</p>
-                <p className="text-white/40 text-[0.8rem] leading-[1.65]" style={{ fontFamily: "'DM Sans', sans-serif" }}>House 14, Road 11, Gulshan-2<br />Dhaka 1212, Bangladesh</p>
-              </div>
-            </div>
+            <GoogleMapEmbed title="STARIA Bangladesh location map" query={MAP_COORDINATES} />
 
             <div className="absolute top-6 right-6 flex items-center gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-[#D9A11A] animate-pulse" />
