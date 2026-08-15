@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { MapPin, Phone, Mail, Send, CheckCheck } from "lucide-react";
+import { ExternalLink, MapPin, Phone, Mail, Send, CheckCheck } from "lucide-react";
 import { GoogleMapEmbed } from "../components/shared/GoogleMapEmbed";
-import { MAP_COORDINATES } from "../services/contactDetails";
+import { MAP_COORDINATES, MAP_SHARE_URL } from "../services/contactDetails";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({ name: "", phone: "", email: "", message: "" });
@@ -51,13 +51,14 @@ export default function ContactPage() {
           <motion.div initial={{ opacity: 0, x: -44 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, margin: "-60px" }} transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
             className="relative rounded-3xl overflow-hidden" style={{ background: "#082D1C", minHeight: "540px" }}>
             <GoogleMapEmbed title="STARIA Bangladesh location map" query={MAP_COORDINATES} />
+            <div aria-hidden="true" className="absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(to bottom, rgba(8,45,28,0.02), rgba(8,45,28,0.05) 45%, rgba(8,45,28,0.72) 100%)" }} />
 
-            <div className="absolute top-6 right-6 flex items-center gap-2">
+            <div className="absolute top-6 right-6 flex items-center gap-2 pointer-events-none">
               <span className="w-1.5 h-1.5 rounded-full bg-[#D9A11A] animate-pulse" />
               <span className="text-[#D9A11A]/55 text-[0.66rem] tracking-[0.38em] uppercase" style={{ fontFamily: "'DM Sans', sans-serif" }}>Our Location</span>
             </div>
 
-            <div className="absolute bottom-0 left-0 right-0 px-8 pb-8 pt-16" style={{ background: "linear-gradient(to top, #082D1C 60%, transparent)" }}>
+            <div className="absolute bottom-0 left-0 right-0 px-8 pb-8 pt-16 pointer-events-none" style={{ background: "linear-gradient(to top, #082D1C 60%, transparent)" }}>
               <div className="flex flex-col gap-3">
                 <div className="flex items-center gap-3">
                   <Phone size={13} className="text-[#D9A11A] shrink-0" />
@@ -68,6 +69,9 @@ export default function ContactPage() {
                   <span className="text-white/45 text-[0.8rem]" style={{ fontFamily: "'DM Sans', sans-serif" }}>info@staria.com.bd</span>
                 </div>
               </div>
+              <a href={MAP_SHARE_URL} target="_blank" rel="noopener noreferrer" className="pointer-events-auto mt-5 inline-flex items-center gap-2 rounded-full border border-[#D9A11A]/35 px-4 py-2 text-[0.7rem] font-semibold uppercase tracking-[0.16em] text-[#D9A11A] transition-colors hover:bg-[#D9A11A] hover:text-[#1B1B1B]" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+                <MapPin size={13} /> Open Map <ExternalLink size={12} />
+              </a>
             </div>
           </motion.div>
 
