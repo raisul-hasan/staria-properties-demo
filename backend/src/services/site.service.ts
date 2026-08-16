@@ -8,8 +8,8 @@ const defaultSite = {
     established: 2010
   },
   contact: {
-    address: "Dhaka, Bangladesh",
-    phone: "+880 1700 000 000",
+    address: "House#425 (First Floor), Road#30, Mohakhali DOHS, Dhaka-1206.",
+    phone: "+8801709993666",
     email: "info@staria.com.bd"
   },
   navigation: [

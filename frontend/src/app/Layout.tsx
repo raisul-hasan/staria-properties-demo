@@ -9,6 +9,14 @@ import {
 import { StariaLogo } from "./components/shared/StariaLogo";
 import { LoadingScreen } from "./components/shared/LoadingScreen";
 import { ScrollToTop } from "./components/shared/ScrollToTop";
+import {
+  BD_ADDRESS,
+  BD_PHONE,
+  BD_PHONE_TEL,
+  US_ADDRESS,
+  US_PHONE,
+  US_PHONE_TEL,
+} from "./services/contactDetails";
 
 const NAV_CONFIG = [
   { label: "Home",        path: "/"            },
@@ -163,15 +171,25 @@ function Footer() {
                 <div className="w-7 h-7 rounded-lg bg-[#0B5E3C]/20 flex items-center justify-center shrink-0 mt-0.5">
                   <MapPin size={12} className="text-[#D9A11A]" />
                 </div>
-                <p className="text-white/35 text-[0.875rem] leading-[1.7]" style={{ fontFamily: "'DM Sans', sans-serif" }}>
-                  House 14, Road 11,<br />Gulshan-2, Dhaka 1212
-                </p>
+                <p className="text-white/35 text-[0.875rem] leading-[1.7]" style={{ fontFamily: "'DM Sans', sans-serif" }}>{BD_ADDRESS}</p>
               </div>
               <div className="flex items-center gap-3.5">
                 <div className="w-7 h-7 rounded-lg bg-[#0B5E3C]/20 flex items-center justify-center shrink-0">
                   <Phone size={12} className="text-[#D9A11A]" />
                 </div>
-                <p className="text-white/35 text-[0.875rem]" style={{ fontFamily: "'DM Sans', sans-serif" }}>+880 1700 000 000</p>
+                <a href={`tel:${BD_PHONE_TEL}`} className="text-white/35 hover:text-[#D9A11A] text-[0.875rem] transition-colors" style={{ fontFamily: "'DM Sans', sans-serif" }}>{BD_PHONE}</a>
+              </div>
+              <div className="flex items-start gap-3.5">
+                <div className="w-7 h-7 rounded-lg bg-[#0B5E3C]/20 flex items-center justify-center shrink-0 mt-0.5">
+                  <MapPin size={12} className="text-[#D9A11A]" />
+                </div>
+                <p className="text-white/35 text-[0.875rem] leading-[1.7]" style={{ fontFamily: "'DM Sans', sans-serif" }}>{US_ADDRESS}</p>
+              </div>
+              <div className="flex items-center gap-3.5">
+                <div className="w-7 h-7 rounded-lg bg-[#0B5E3C]/20 flex items-center justify-center shrink-0">
+                  <Phone size={12} className="text-[#D9A11A]" />
+                </div>
+                <a href={`tel:${US_PHONE_TEL}`} className="text-white/35 hover:text-[#D9A11A] text-[0.875rem] transition-colors" style={{ fontFamily: "'DM Sans', sans-serif" }}>{US_PHONE}</a>
               </div>
               <div className="flex items-center gap-3.5">
                 <div className="w-7 h-7 rounded-lg bg-[#0B5E3C]/20 flex items-center justify-center shrink-0">

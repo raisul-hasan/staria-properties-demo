@@ -2,7 +2,16 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { ExternalLink, MapPin, Phone, Mail, Send, CheckCheck } from "lucide-react";
 import { GoogleMapEmbed } from "../components/shared/GoogleMapEmbed";
-import { MAP_COORDINATES, MAP_SHARE_URL } from "../services/contactDetails";
+import {
+  BD_ADDRESS,
+  BD_PHONE,
+  BD_PHONE_TEL,
+  MAP_COORDINATES,
+  MAP_SHARE_URL,
+  US_ADDRESS,
+  US_PHONE,
+  US_PHONE_TEL,
+} from "../services/contactDetails";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({ name: "", phone: "", email: "", message: "" });
@@ -58,16 +67,24 @@ export default function ContactPage() {
               <span className="text-[#D9A11A]/55 text-[0.66rem] tracking-[0.38em] uppercase" style={{ fontFamily: "'DM Sans', sans-serif" }}>Our Location</span>
             </div>
 
-            <div className="absolute bottom-0 left-0 right-0 px-8 pb-8 pt-16 pointer-events-none" style={{ background: "linear-gradient(to top, #082D1C 60%, transparent)" }}>
+            <div className="absolute bottom-0 left-0 right-0 px-8 pb-8 pt-20 pointer-events-none" style={{ background: "linear-gradient(to top, #082D1C 72%, transparent)" }}>
               <div className="flex flex-col gap-3">
-                <div className="flex items-center gap-3">
+                <a href={MAP_SHARE_URL} target="_blank" rel="noopener noreferrer" className="pointer-events-auto flex items-start gap-3 text-white/60 hover:text-white transition-colors">
+                  <MapPin size={13} className="text-[#D9A11A] shrink-0 mt-1" />
+                  <span className="text-[0.8rem] leading-5" style={{ fontFamily: "'DM Sans', sans-serif" }}>{BD_ADDRESS}</span>
+                </a>
+                <a href={`tel:${BD_PHONE_TEL}`} className="pointer-events-auto flex items-center gap-3 text-white/60 hover:text-[#D9A11A] transition-colors">
                   <Phone size={13} className="text-[#D9A11A] shrink-0" />
-                  <span className="text-white/45 text-[0.8rem]" style={{ fontFamily: "'DM Sans', sans-serif" }}>+880 1700 000 000</span>
-                </div>
-                <div className="flex items-center gap-3">
+                  <span className="text-[0.8rem]" style={{ fontFamily: "'DM Sans', sans-serif" }}>{BD_PHONE}</span>
+                </a>
+                <a href={`tel:${US_PHONE_TEL}`} className="pointer-events-auto flex items-center gap-3 text-white/60 hover:text-[#D9A11A] transition-colors">
+                  <Phone size={13} className="text-[#D9A11A] shrink-0" />
+                  <span className="text-[0.8rem]" style={{ fontFamily: "'DM Sans', sans-serif" }}>{US_PHONE} · {US_ADDRESS}</span>
+                </a>
+                <a href="mailto:info@staria.com.bd" className="pointer-events-auto flex items-center gap-3 text-white/60 hover:text-[#D9A11A] transition-colors">
                   <Mail size={13} className="text-[#D9A11A] shrink-0" />
-                  <span className="text-white/45 text-[0.8rem]" style={{ fontFamily: "'DM Sans', sans-serif" }}>info@staria.com.bd</span>
-                </div>
+                  <span className="text-[0.8rem]" style={{ fontFamily: "'DM Sans', sans-serif" }}>info@staria.com.bd</span>
+                </a>
               </div>
               <a href={MAP_SHARE_URL} target="_blank" rel="noopener noreferrer" className="pointer-events-auto mt-5 inline-flex items-center gap-2 rounded-full border border-[#D9A11A]/35 px-4 py-2 text-[0.7rem] font-semibold uppercase tracking-[0.16em] text-[#D9A11A] transition-colors hover:bg-[#D9A11A] hover:text-[#1B1B1B]" style={{ fontFamily: "'DM Sans', sans-serif" }}>
                 <MapPin size={13} /> Open Map <ExternalLink size={12} />
