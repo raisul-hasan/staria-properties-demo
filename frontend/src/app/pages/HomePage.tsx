@@ -45,7 +45,7 @@ const SERVICES = [
   { Icon: Building2, title: "Property Development", desc: "From land acquisition to final handover, we deliver landmark residential and commercial developments with uncompromising precision.", image: "https://images.unsplash.com/photo-1565008447742-97f6f38c985c?w=800&h=500&fit=crop&auto=format&q=92" },
   { Icon: Paintbrush, title: "Interior Design", desc: "Transform spaces into bespoke environments with our curated interior design, space planning and premium fit-out services.", image: "https://images.unsplash.com/photo-1646987916641-1f3c8992daa2?w=800&h=500&fit=crop&auto=format&q=92" },
   { Icon: LayoutDashboard, title: "Property Management", desc: "Comprehensive management solutions that protect, maintain and continuously grow the long-term value of your real estate portfolio.", image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&h=500&fit=crop&auto=format&q=92" },
-  { Icon: TrendingUp, title: "Investment Consultancy", desc: "Strategic advisory to identify high-yield opportunities, optimise returns and build enduring wealth through real estate investment.", image: "https://images.unsplash.com/photo-1558954157-aa76c0d246c6?w=800&h=500&fit=crop&auto=format&q=92" },
+  { Icon: TrendingUp, title: "Investment Consultancy", desc: "Strategic advisory to identify high-yield opportunities, optimise returns and build enduring wealth through real estate investment.", image: "/images/consultancy/discussion.webp" },
 ];
 
 const FEATURED_PROJECTS = [
