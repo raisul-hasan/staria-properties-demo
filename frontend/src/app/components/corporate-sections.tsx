@@ -495,7 +495,7 @@ const TEAM_MEMBERS: TeamMember[] = [
   },
   {
     id: 5,
-    name: "Maj S M Muzahid Monir, SUP, psc, PEng, Phd (Retd)",
+    name: "Maj S M Muzahid Monir, SUP, psc, PEng, PhD (Retd.)",
     role: "Executive Director",
     company: " ",
     image: mujahidPortrait,

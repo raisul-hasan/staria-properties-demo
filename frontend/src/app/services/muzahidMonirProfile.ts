@@ -1,7 +1,7 @@
 // Summarised from the user-supplied Career Profile.pdf. Source mapping: docs/muzahid-monir-profile.md.
 export const MUZAHID_PROFILE = {
   name: "Maj S M Muzahid Monir",
-  honours: "SUP, psc, PEng (Retd)",
+  honours: "SUP, psc, PEng, PhD (Retd.)",
   role: "Executive Director, STARIA",
   overview: "A civil engineer and former Bangladesh Army Corps of Engineers officer with 18 years of military service. His career brings together infrastructure delivery, construction quality assurance, health and safety, human resources, disaster management and university teaching.",
   expertise: ["Civil engineering", "Project management", "Quality assurance", "Health, safety & environment", "Disaster management", "People & operations"],

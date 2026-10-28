@@ -28,7 +28,7 @@ Career content is summarised from the user-supplied 30-page `Career Profile.pdf`
 - The rail-link end date follows page 25 (31 May 2025); the invalid “31 April” text on image pages 26–27 is not reproduced.
 - Academic appointments use the starting dates listed in the PDF, without independently asserting current employment status.
 - The PDF uses different labels for the defence / military studies degree. The page uses a general description rather than choosing between them.
-- No PhD degree is listed in the PDF, so no doctoral qualification is added to the profile page. The existing director card's supplied display name is preserved.
+- The profile designation and director card use `SUP, psc, PEng, PhD (Retd.)`, supplied directly by the user on 28 October 2026.
 - Descriptions are paraphrased, numerical inconsistencies are avoided, and professional membership identifiers are omitted.
 - The hotel visual is captioned as a project visual rather than a photograph of a completed building.
 
