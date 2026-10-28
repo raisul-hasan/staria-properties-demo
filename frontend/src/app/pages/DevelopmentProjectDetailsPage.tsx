@@ -1,7 +1,8 @@
 import { Link, useParams } from "react-router";
 import { ArrowLeft } from "lucide-react";
 import { ProjectPhotoGallery } from "../components/ProjectPhotoGallery";
-import { DEVELOPMENT_PROJECTS, PROJECT_GALLERIES, PROJECT_STATUS_STYLE, SKS_IMAGE_SOURCE } from "../services/developmentProjects";
+import { ProjectVideoPlayer } from "../components/ProjectVideoPlayer";
+import { DEVELOPMENT_PROJECTS, PROJECT_GALLERIES, PROJECT_VISUALISATIONS, PROJECT_STATUS_STYLE, SKS_IMAGE_SOURCE } from "../services/developmentProjects";
 
 function ProposedDevelopment() {
   const components = [
@@ -37,6 +38,7 @@ function ProposedDevelopment() {
 export default function DevelopmentProjectDetailsPage() {
   const { id } = useParams();
   const project = DEVELOPMENT_PROJECTS.find((item) => item.slug === id);
+  const visualisation = project ? PROJECT_VISUALISATIONS[project.slug] : undefined;
 
   return (
     <div className="min-h-screen bg-[#F7F7F5] pt-32 pb-20 md:pt-40 md:pb-28" style={{ fontFamily: "'DM Sans', sans-serif" }}>
@@ -52,6 +54,17 @@ export default function DevelopmentProjectDetailsPage() {
             <img src={project.image} alt={project.imageAlt} className="max-h-[620px] w-full rounded-2xl bg-[#E8E8E3] object-contain" />
             {project.imageCaption && <figcaption className="mt-3 text-xs leading-6 text-[#666666]">{project.slug === "sks-city" ? <>Illustrative image for the proposed development. Photo: <a href={SKS_IMAGE_SOURCE.url} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2">{SKS_IMAGE_SOURCE.credit}</a>.</> : project.imageCaption}</figcaption>}
           </figure>
+          {visualisation ? (
+            <div key={project.slug} className="mx-auto mb-14 max-w-[1050px] space-y-10">
+              <ProjectPhotoGallery title="3D Visualisation" label={`${project.title} — 3D visualisation`} photos={visualisation.photos} imageFit="contain" />
+              {visualisation.video ? (
+                <section aria-labelledby="project-walkthrough-title">
+                  <h2 id="project-walkthrough-title" className="mb-6 text-2xl text-[#082D1C]" style={{ fontFamily: "'Gilda Display', Georgia, serif" }}>3D Walkthrough</h2>
+                  <ProjectVideoPlayer key={visualisation.video.src} video={visualisation.video} labelledBy="project-walkthrough-title" />
+                </section>
+              ) : null}
+            </div>
+          ) : null}
           {project.slug === "bafwwa-cafe" && <div className="mx-auto max-w-[1050px]"><ProjectPhotoGallery title="Latest Site Progress" label="BAFWWA Café — ongoing works" photos={PROJECT_GALLERIES.cafe} /></div>}
           {project.slug === "baf-ops-office-interior" && <div className="grid items-start gap-12 lg:grid-cols-2"><ProjectPhotoGallery title="Before · In Progress" label="BAF Ops office — before / in progress" photos={PROJECT_GALLERIES.before} /><ProjectPhotoGallery title="After · Finished" label="BAF Ops office — after / finished" photos={PROJECT_GALLERIES.after} /></div>}
           {project.slug === "sks-city" && <ProposedDevelopment />}

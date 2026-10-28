@@ -3,7 +3,7 @@ import * as Dialog from "@radix-ui/react-dialog";
 import { ArrowLeft, ArrowRight, X, ZoomIn } from "lucide-react";
 import type { ProjectPhoto } from "../services/developmentProjects";
 
-export function ProjectPhotoGallery({ title, label, photos }: { title: string; label: string; photos: readonly ProjectPhoto[] }) {
+export function ProjectPhotoGallery({ title, label, photos, imageFit = "cover" }: { title: string; label: string; photos: readonly ProjectPhoto[]; imageFit?: "cover" | "contain" }) {
   const [visibleCount, setVisibleCount] = useState(6);
   const [selected, setSelected] = useState<number | null>(null);
   const triggerRef = useRef<HTMLButtonElement | null>(null);
@@ -19,9 +19,12 @@ export function ProjectPhotoGallery({ title, label, photos }: { title: string; l
       </div>
       <div className="grid grid-cols-2 gap-3 sm:gap-4">
         {photos.slice(0, visibleCount).map((item, index) => (
-          <button key={item.src} type="button" onClick={(event) => { triggerRef.current = event.currentTarget; setSelected(index); }} aria-label={`Enlarge ${label}, photo ${index + 1}`} className="group relative overflow-hidden rounded-xl bg-[#E8E8E3] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#0B5E3C]">
-            <img src={item.thumbnail} alt={`${label} — photo ${index + 1}`} width={item.width} height={item.height} loading="lazy" decoding="async" className="aspect-[4/3] h-auto w-full object-cover transition-transform duration-500 group-hover:scale-[1.03] motion-reduce:transition-none" />
-            <span aria-hidden="true" className="absolute right-2 bottom-2 rounded-full bg-black/55 p-2 text-white"><ZoomIn size={15} /></span>
+          <button key={item.src} type="button" onClick={(event) => { triggerRef.current = event.currentTarget; setSelected(index); }} aria-label={`Enlarge ${label}, ${item.caption ?? `photo ${index + 1}`}`} className="group overflow-hidden rounded-xl bg-[#E8E8E3] text-left focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#0B5E3C]">
+            <span className="relative block overflow-hidden">
+              <img src={item.thumbnail} alt={item.alt ?? `${label} — photo ${index + 1}`} width={item.width} height={item.height} loading="lazy" decoding="async" className={`aspect-[4/3] h-auto w-full ${imageFit === "contain" ? "object-contain" : "object-cover transition-transform duration-500 group-hover:scale-[1.03] motion-reduce:transition-none"}`} />
+              <span aria-hidden="true" className="absolute right-2 bottom-2 rounded-full bg-black/55 p-2 text-white"><ZoomIn size={15} /></span>
+            </span>
+            {item.caption ? <span className="block bg-white px-3 py-3 text-sm font-medium leading-6 text-[#35483C]">{item.caption}</span> : null}
           </button>
         ))}
       </div>
@@ -34,7 +37,7 @@ export function ProjectPhotoGallery({ title, label, photos }: { title: string; l
               <Dialog.Title className="text-sm sm:text-base">{label} · {selected === null ? "" : selected + 1} / {photos.length}</Dialog.Title>
               <Dialog.Close aria-label="Close photo" className="rounded-full p-2 hover:bg-white/15"><X size={22} /></Dialog.Close>
             </div>
-            {photo && <img src={photo.src} alt={`${label} — photo ${(selected ?? 0) + 1}`} width={photo.width} height={photo.height} className="max-h-[72vh] w-full object-contain" />}
+            {photo && <img src={photo.src} alt={photo.alt ?? `${label} — photo ${(selected ?? 0) + 1}`} width={photo.width} height={photo.height} className="max-h-[72vh] w-full object-contain" />}
             <div className="mt-4 flex justify-between gap-4">
               <button type="button" onClick={() => move(-1)} className="inline-flex min-h-11 items-center gap-2 rounded-full px-4 py-2 hover:bg-white/15"><ArrowLeft size={18} />Previous</button>
               <button type="button" onClick={() => move(1)} className="inline-flex min-h-11 items-center gap-2 rounded-full px-4 py-2 hover:bg-white/15">Next<ArrowRight size={18} /></button>

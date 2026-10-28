@@ -1,6 +1,11 @@
 import media from "./projectMedia.json";
+import visualisations from "./projectVisualisations.json";
 
-export type ProjectPhoto = { src: string; thumbnail: string; width: number; height: number };
+export type ProjectPhoto = { src: string; thumbnail: string; width: number; height: number; alt?: string; caption?: string };
+export type ProjectVisualisation = {
+  photos: ProjectPhoto[];
+  video?: { src: string; poster: string; width: number; height: number };
+};
 export type DevelopmentProject = {
   slug: string;
   title: string;
@@ -8,6 +13,7 @@ export type DevelopmentProject = {
   type: string;
   image: string;
   imageAlt: string;
+  thumbnail?: { src: string; alt: string; caption?: string };
   summary?: string;
   imageCaption?: string;
 };
@@ -20,7 +26,7 @@ export const DEVELOPMENT_PROJECTS: readonly DevelopmentProject[] = [
     type: "Roadside Café & Boutique Shop",
     image: "/images/projects/cafe-cover.webp",
     imageAlt: "Architectural visualisation of the BAFWWA Café and boutique shop",
-    summary: "An ongoing roadside café and boutique shop project. Explore the latest photographs from the site.",
+    summary: "An ongoing roadside café and boutique shop project. Explore 3D visualisations, a project walkthrough and the latest photographs from the site.",
     imageCaption: "Architectural visualisation",
   },
   {
@@ -30,6 +36,11 @@ export const DEVELOPMENT_PROJECTS: readonly DevelopmentProject[] = [
     type: "Office Interior",
     image: "/images/projects/after-047.webp",
     imageAlt: "Finished BAF Ops office interior with timber finishes and recessed lighting",
+    thumbnail: {
+      src: "/images/projects/3d/office-conference-room-03.webp",
+      alt: "3D visualisation of the BAF Ops office conference room",
+      caption: "3D Visualisation",
+    },
   },
   {
     slug: "sks-city",
@@ -44,6 +55,7 @@ export const DEVELOPMENT_PROJECTS: readonly DevelopmentProject[] = [
 ];
 
 export const PROJECT_GALLERIES: Record<string, ProjectPhoto[]> = media;
+export const PROJECT_VISUALISATIONS: Record<string, ProjectVisualisation | undefined> = visualisations;
 
 export const PROJECT_STATUS_STYLE = {
   Ongoing: "bg-[#D9A11A] text-[#1B1B1B]",

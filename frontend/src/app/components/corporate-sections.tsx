@@ -13,6 +13,7 @@ import {
 import { api } from "../services/api";
 import { useApiList } from "../services/content";
 import { PARTNERS, type Partner } from "../services/partners";
+import { MUZAHID_PROFILE } from "../services/muzahidMonirProfile";
 import "./partners-section.css";
 import riadPortrait from "../../assets/team/official/riad-director.jpg";
 import shatadruPortrait from "../../assets/team/official/shatadru-director.png";
@@ -439,6 +440,7 @@ type TeamMember = {
   name: string;
   role: string;
   company: string;
+  honours?: string;
   image?: string;
   profilePath?: string;
   phones: string[];
@@ -495,7 +497,8 @@ const TEAM_MEMBERS: TeamMember[] = [
   },
   {
     id: 5,
-    name: "Maj S M Muzahid Monir, SUP, psc, PEng, PhD (Retd.)",
+    name: MUZAHID_PROFILE.name,
+    honours: MUZAHID_PROFILE.honours,
     role: "Executive Director",
     company: " ",
     image: mujahidPortrait,
@@ -588,6 +591,7 @@ function TeamMemberCard({ member, index }: { member: TeamMember; index: number }
           <h3 className="text-[#1B1B1B] leading-[1.22] mb-2 transition-colors duration-300 group-hover:text-[#0B5E3C]" style={{ fontFamily: gilda, fontSize: "clamp(1.16rem, 1.25vw, 1.35rem)", fontWeight: 400 }}>
             {member.name}
           </h3>
+          {member.honours ? <p className="mb-3 text-[0.8rem] font-medium leading-relaxed text-[#405246]" style={{ fontFamily: dm }}>{member.honours}</p> : null}
           <p className="text-[#0B5E3C] text-[0.95rem] font-semibold leading-snug mb-4" style={{ fontFamily: dm }}>
             {member.role}
           </p>

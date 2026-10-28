@@ -1,0 +1,112 @@
+{
+  "baf-ops-office-interior": {
+    "photos": [
+      {
+        "src": "/images/projects/3d/office-auditorium-01.webp",
+        "thumbnail": "/images/projects/3d/office-auditorium-01-thumb.webp",
+        "width": 1600,
+        "height": 937,
+        "alt": "3D visualisation of the BAF Ops office auditorium, first view",
+        "caption": "Auditorium - View 1"
+      },
+      {
+        "src": "/images/projects/3d/office-auditorium-02.webp",
+        "thumbnail": "/images/projects/3d/office-auditorium-02-thumb.webp",
+        "width": 1600,
+        "height": 805,
+        "alt": "3D visualisation of the BAF Ops office auditorium, second view",
+        "caption": "Auditorium - View 2"
+      },
+      {
+        "src": "/images/projects/3d/office-conference-room-01.webp",
+        "thumbnail": "/images/projects/3d/office-conference-room-01-thumb.webp",
+        "width": 1402,
+        "height": 1122,
+        "alt": "3D visualisation of the BAF Ops office conference room, first view",
+        "caption": "Conference Room - View 1"
+      },
+      {
+        "src": "/images/projects/3d/office-conference-room-02.webp",
+        "thumbnail": "/images/projects/3d/office-conference-room-02-thumb.webp",
+        "width": 1402,
+        "height": 1122,
+        "alt": "3D visualisation of the BAF Ops office conference room, second view",
+        "caption": "Conference Room - View 2"
+      },
+      {
+        "src": "/images/projects/3d/office-conference-room-03.webp",
+        "thumbnail": "/images/projects/3d/office-conference-room-03-thumb.webp",
+        "width": 1402,
+        "height": 1122,
+        "alt": "3D visualisation of the BAF Ops office conference room, third view",
+        "caption": "Conference Room - View 3"
+      },
+      {
+        "src": "/images/projects/3d/office-aoc-meeting-room.webp",
+        "thumbnail": "/images/projects/3d/office-aoc-meeting-room-thumb.webp",
+        "width": 1444,
+        "height": 1089,
+        "alt": "3D visualisation of the AOC meeting room at the BAF Ops office",
+        "caption": "AOC Meeting Room"
+      },
+      {
+        "src": "/images/projects/3d/office-aoc-room.webp",
+        "thumbnail": "/images/projects/3d/office-aoc-room-thumb.webp",
+        "width": 1433,
+        "height": 1098,
+        "alt": "3D visualisation of the AOC room at the BAF Ops office",
+        "caption": "AOC Room"
+      },
+      {
+        "src": "/images/projects/3d/office-waiting-room.webp",
+        "thumbnail": "/images/projects/3d/office-waiting-room-thumb.webp",
+        "width": 1445,
+        "height": 1089,
+        "alt": "3D visualisation of the waiting room at the BAF Ops office",
+        "caption": "Waiting Room"
+      }
+    ]
+  },
+  "bafwwa-cafe": {
+    "photos": [
+      {
+        "src": "/images/projects/3d/cafe-exterior-01.webp",
+        "thumbnail": "/images/projects/3d/cafe-exterior-01-thumb.webp",
+        "width": 1600,
+        "height": 900,
+        "alt": "3D exterior visualisation of the BAFWWA roadside café and boutique shop, view 1",
+        "caption": "Exterior - View 1"
+      },
+      {
+        "src": "/images/projects/3d/cafe-exterior-02.webp",
+        "thumbnail": "/images/projects/3d/cafe-exterior-02-thumb.webp",
+        "width": 1600,
+        "height": 900,
+        "alt": "3D exterior visualisation of the BAFWWA roadside café and boutique shop, view 2",
+        "caption": "Exterior - View 2"
+      },
+      {
+        "src": "/images/projects/3d/cafe-exterior-03.webp",
+        "thumbnail": "/images/projects/3d/cafe-exterior-03-thumb.webp",
+        "width": 1600,
+        "height": 900,
+        "alt": "3D exterior visualisation of the BAFWWA roadside café and boutique shop, view 3",
+        "caption": "Exterior - View 3"
+      },
+      {
+        "src": "/images/projects/3d/cafe-exterior-04.webp",
+        "thumbnail": "/images/projects/3d/cafe-exterior-04-thumb.webp",
+        "width": 1600,
+        "height": 900,
+        "alt": "3D exterior visualisation of the BAFWWA roadside café and boutique shop, view 4",
+        "caption": "Exterior - View 4"
+      }
+    ],
+    "video": {
+      "src": "/videos/projects/bafwwa-cafe-3d-walkthrough-with-audio.mp4",
+      "poster": "/images/projects/3d/cafe-3d-walkthrough-poster.webp",
+      "width": 1920,
+      "height": 1080
+    }
+  }
+}

@@ -29,6 +29,7 @@ Career content is summarised from the user-supplied 30-page `Career Profile.pdf`
 - Academic appointments use the starting dates listed in the PDF, without independently asserting current employment status.
 - The PDF uses different labels for the defence / military studies degree. The page uses a general description rather than choosing between them.
 - The profile designation and director card use `SUP, psc, PEng, PhD (Retd.)`, supplied directly by the user on 28 October 2026.
+- The name and designation are separate lines on both the profile page and director card, following the user's screenshot. Both read the same profile data so `PhD` appears after `PEng` consistently.
 - Descriptions are paraphrased, numerical inconsistencies are avoided, and professional membership identifiers are omitted.
 - The hotel visual is captioned as a project visual rather than a photograph of a completed building.
 
