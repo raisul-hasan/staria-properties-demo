@@ -862,7 +862,7 @@ async function main() {
     ["company", "company.phone", "+8801709993666"],
     ["company", "company.phone.bd", "+8801709993666"],
     ["company", "company.phone.us", "+1(888)6139218"],
-    ["company", "company.email", "hello@staria.demo"],
+    ["company", "company.email", "info@stariadevelopment.com"],
     ["company", "company.address", "House#425 (First Floor), Road#30, Mohakhali DOHS, Dhaka-1206."],
     ["company", "company.address.bd", "House#425 (First Floor), Road#30, Mohakhali DOHS, Dhaka-1206."],
     ["company", "company.address.us", "1 Great Neck Road, Ste#4, Great Neck, NY 11021."],

@@ -5,7 +5,7 @@ import { api } from "../services/api";
 import { Link } from "react-router";
 import { EmploymentDialog } from "../components/shared/EmploymentDialog";
 import { GoogleMapEmbed } from "../components/shared/GoogleMapEmbed";
-import { BD_ADDRESS, BD_PHONE, BD_PHONE_TEL, MAP_COORDINATES, MAP_SHARE_URL, US_ADDRESS, US_PHONE, US_PHONE_TEL } from "../services/contactDetails";
+import { BD_ADDRESS, BD_PHONE, BD_PHONE_TEL, CONTACT_EMAIL, MAP_COORDINATES, MAP_SHARE_URL, US_ADDRESS, US_PHONE, US_PHONE_TEL } from "../services/contactDetails";
 
 export default function ContactPage() {
   const [employmentOpen, setEmploymentOpen] = useState(false);
@@ -116,7 +116,7 @@ export default function ContactPage() {
 
                 <div className="mt-4 flex items-center gap-2 border-t border-white/[0.08] pt-4">
                   <Mail size={13} className="text-[#D9A11A] shrink-0" />
-                  <span className="text-white/50 text-[0.78rem]" style={{ fontFamily: "'DM Sans', sans-serif" }}>info@staria.com.bd</span>
+                  <a href={`mailto:${CONTACT_EMAIL}`} className="break-all text-white/50 text-[0.78rem] hover:text-[#D9A11A]" style={{ fontFamily: "'DM Sans', sans-serif" }}>{CONTACT_EMAIL}</a>
                 </div>
               </div>
             </div>

@@ -1,3 +1,5 @@
+export const CONTACT_EMAIL = "info@stariadevelopment.com";
+
 export const BD_ADDRESS = "House#425 (First Floor), Road#30, Mohakhali DOHS, Dhaka-1206.";
 export const BD_PHONE = "+8801709993666";
 export const BD_PHONE_TEL = "+8801709993666";

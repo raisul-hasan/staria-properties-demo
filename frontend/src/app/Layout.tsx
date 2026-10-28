@@ -15,7 +15,7 @@ import { ConsultationDialog } from "./components/shared/ConsultationDialog";
 import { EmploymentDialog } from "./components/shared/EmploymentDialog";
 import { api, type SiteInfo } from "./services/api";
 import { PUBLIC_INSIGHTS_ENABLED } from "./features";
-import { BD_ADDRESS, BD_PHONE, BD_PHONE_TEL, US_ADDRESS, US_PHONE, US_PHONE_TEL } from "./services/contactDetails";
+import { BD_ADDRESS, BD_PHONE, BD_PHONE_TEL, CONTACT_EMAIL, US_ADDRESS, US_PHONE, US_PHONE_TEL } from "./services/contactDetails";
 
 const NAV_CONFIG = [
   { label: "Home",        path: "/"            },
@@ -41,7 +41,7 @@ const STARIA_SOCIALS = [
   { Icon: Instagram, label: "Instagram", href: null },
   { Icon: Linkedin, label: "LinkedIn", href: null },
   { Icon: X, label: "X", href: null },
-  { Icon: Mail, label: "Email STARIA", href: "mailto:info@stariadevelopment.com" },
+  { Icon: Mail, label: "Email STARIA", href: `mailto:${CONTACT_EMAIL}` },
 ] as const;
 
 function StariaSocialLinks({ className = "", framed = false }: { className?: string; framed?: boolean }) {
@@ -148,7 +148,6 @@ function Footer({ siteInfo }: { siteInfo: SiteInfo | null }) {
   const bdPhone = String(siteInfo?.["company.phone.bd"] ?? siteInfo?.contact?.bdPhone ?? siteInfo?.["company.phone"] ?? siteInfo?.contact?.phone ?? BD_PHONE);
   const usAddress = String(siteInfo?.["company.address.us"] ?? siteInfo?.contact?.usAddress ?? US_ADDRESS);
   const usPhone = String(siteInfo?.["company.phone.us"] ?? siteInfo?.contact?.usPhone ?? US_PHONE);
-  const contactEmail = String(siteInfo?.["company.email"] ?? siteInfo?.contact?.email ?? "info@staria.com.bd");
 
   const quickLinks = [
     { label: "Home",        path: "/"            },
@@ -287,7 +286,7 @@ function Footer({ siteInfo }: { siteInfo: SiteInfo | null }) {
                 <div className="w-7 h-7 rounded-lg bg-[#0B5E3C]/20 flex items-center justify-center shrink-0">
                   <Mail size={12} className="text-[#D9A11A]" />
                 </div>
-                <a href={`mailto:${contactEmail}`} className="text-white/35 text-[0.875rem]" style={{ fontFamily: "'DM Sans', sans-serif" }}>{contactEmail}</a>
+                <a href={`mailto:${CONTACT_EMAIL}`} className="break-all text-white/35 text-[0.875rem]" style={{ fontFamily: "'DM Sans', sans-serif" }}>{CONTACT_EMAIL}</a>
               </div>
             </div>
           </div>

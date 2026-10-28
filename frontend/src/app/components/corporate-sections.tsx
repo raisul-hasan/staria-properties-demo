@@ -12,6 +12,8 @@ import {
 } from "lucide-react";
 import { api } from "../services/api";
 import { useApiList } from "../services/content";
+import { PARTNERS, type Partner } from "../services/partners";
+import "./partners-section.css";
 import riadPortrait from "../../assets/team/official/riad-director.jpg";
 import shatadruPortrait from "../../assets/team/official/shatadru-director.png";
 import mujahidPortrait from "../../assets/team/official/muzahid-director.jpg";
@@ -679,63 +681,52 @@ export function LeadershipSection() {
   );
 }
 
-const PARTNERS = [
-  "Mashfiq Construction", "Super Board", "Berger Paints Bangladesh Limited",
-  "BRB Cable Industries Ltd", "Hat Bakso",
-] as const;
+function PartnerLogo({ partner: { name, website, logo }, duplicate = false }: { partner: Partner; duplicate?: boolean }) {
+  const content = (
+    <>
+      {logo ? <img src={logo.src} alt="" width={logo.width} height={logo.height} loading="lazy" decoding="async" className="h-16 w-auto max-w-28 shrink-0 object-contain sm:h-20 sm:max-w-36" /> : null}
+      <span className="max-w-[240px] text-sm font-semibold uppercase leading-relaxed tracking-[0.16em] sm:text-base" style={{ fontFamily: dm }}>{name}</span>
+      {website ? <ArrowUpRight size={17} aria-hidden="true" className="shrink-0 text-[#0B5E3C]/60 transition-colors group-hover:text-[#0B5E3C]" /> : null}
+    </>
+  );
+  const logoClass = "mx-7 flex min-h-24 shrink-0 items-center gap-4 rounded-sm text-[#244D39] sm:mx-10 sm:min-h-28 sm:gap-5";
 
-function PartnerLogo({ name }: { name: string }) {
-  return (
-    <div className="flex-shrink-0 mx-10 flex items-center justify-center h-14 group cursor-default">
-      <span
-        className="text-black/25 group-hover:text-[#0B5E3C] transition-colors duration-400 text-[0.85rem] tracking-[0.25em] uppercase font-semibold select-none"
-        style={{ fontFamily: dm }}
-      >
-        {name}
-      </span>
-    </div>
+  return website ? (
+    <a href={website} target="_blank" rel="noopener noreferrer" tabIndex={duplicate ? -1 : undefined} aria-label={`Visit ${name} website (opens in a new tab)`} className={`${logoClass} group transition-colors duration-300 hover:text-[#0B5E3C] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#0B5E3C]`}>
+      {content}
+    </a>
+  ) : (
+    <div className={logoClass}>{content}</div>
   );
 }
 
 export function PartnersSection() {
-  const trackRef = useRef<HTMLDivElement>(null);
-
   return (
-    <section className="bg-[#F7F7F5] py-36 overflow-hidden">
-      <div className="max-w-[1440px] mx-auto px-12 xl:px-20 mb-16">
-        <motion.div
-          className="flex items-center gap-4"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-        >
-          <span className="block w-8 h-px bg-[#D9A11A]" />
-          <span className="text-[#0B5E3C] text-[0.8125rem] tracking-[0.32em] uppercase font-semibold" style={{ fontFamily: dm }}>
-            Trusted Partners &amp; Collaborators
-          </span>
-          <span className="block flex-1 h-px bg-black/[0.07]" />
+    <section id="trusted-partners" aria-labelledby="trusted-partners-title" className="scroll-mt-24 overflow-hidden bg-[#F7F7F5] py-24 sm:py-36">
+      <div className="mx-auto mb-10 max-w-[1440px] px-6 sm:mb-16 sm:px-12 xl:px-20">
+        <motion.div className="flex items-center gap-4" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}>
+          <span aria-hidden="true" className="h-px w-8 shrink-0 bg-[#D9A11A]" />
+          <h2 id="trusted-partners-title" className="text-base font-semibold uppercase leading-relaxed tracking-[0.24em] text-[#0B5E3C] sm:text-lg" style={{ fontFamily: dm }}>
+            Trusted Partners &amp; Clients
+          </h2>
+          <span aria-hidden="true" className="h-px flex-1 bg-black/[0.07]" />
         </motion.div>
       </div>
 
-      {/* Marquee container */}
-      <div className="relative">
-        {/* Fade edges */}
-        <div className="absolute left-0 top-0 bottom-0 w-32 z-10 pointer-events-none" style={{ background: "linear-gradient(to right, #F7F7F5, transparent)" }} />
-        <div className="absolute right-0 top-0 bottom-0 w-32 z-10 pointer-events-none" style={{ background: "linear-gradient(to left, #F7F7F5, transparent)" }} />
-
-        {/* Scrolling track */}
-        <div className="flex overflow-hidden">
-          <motion.div
-            ref={trackRef}
-            className="flex"
-            animate={{ x: ["0%", "-50%"] }}
-            transition={{ duration: 30, ease: "linear", repeat: Infinity }}
-          >
-            {[...PARTNERS, ...PARTNERS].map((name, i) => (
-              <PartnerLogo key={`${name}-${i}`} name={name} />
+      <div className="partners-marquee relative">
+        <div aria-hidden="true" className="partners-fade pointer-events-none absolute inset-y-0 left-0 z-10 w-8 bg-gradient-to-r from-[#F7F7F5] to-transparent sm:w-20 lg:w-32" />
+        <div aria-hidden="true" className="partners-fade pointer-events-none absolute inset-y-0 right-0 z-10 w-8 bg-gradient-to-l from-[#F7F7F5] to-transparent sm:w-20 lg:w-32" />
+        <div className="partners-track flex w-max">
+          <ul role="list" className="flex shrink-0 items-center py-4">
+            {PARTNERS.map((partner) => (
+              <li key={partner.name} className="shrink-0"><PartnerLogo partner={partner} /></li>
             ))}
-          </motion.div>
+          </ul>
+          <ul aria-hidden="true" className="partners-list-duplicate flex shrink-0 items-center py-4">
+            {PARTNERS.map((partner) => (
+              <li key={partner.name} className="shrink-0"><PartnerLogo partner={partner} duplicate /></li>
+            ))}
+          </ul>
         </div>
       </div>
     </section>

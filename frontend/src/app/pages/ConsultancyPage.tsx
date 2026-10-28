@@ -2,6 +2,7 @@ import { useState } from "react";
 import { ArrowUpRight, Phone } from "lucide-react";
 import { ConsultationDialog } from "../components/shared/ConsultationDialog";
 import { BD_PHONE, BD_PHONE_TEL } from "../services/contactDetails";
+import { CONSULTANCY_PROJECTS } from "../services/consultancyProjects";
 import "./ConsultancyPage.css";
 
 const CONSULTANCY_AREAS = [
@@ -58,6 +59,30 @@ export default function ConsultancyPage() {
             </div>
             <button type="button" onClick={() => setEnquiryOpen(true)} className="mt-3 inline-flex min-h-12 items-center gap-3 border-b border-[#E5B440] py-2 text-base font-semibold consultancy-accent transition-colors hover:text-[#1B2D23] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#0B5E3C]">Tell us what you have in mind<ArrowUpRight aria-hidden="true" size={18} /></button>
           </div>
+        </div>
+      </section>
+      <section className="consultancy-projects bg-[#F7F7F2] py-16 md:py-24" aria-labelledby="consultancy-projects-title">
+        <div className="mx-auto max-w-[1440px] px-6 sm:px-10 xl:px-20">
+          <h2 id="consultancy-projects-title" className="font-normal leading-[1.15] text-[#1B2D23]" style={{ fontFamily: "'Gilda Display', Georgia, serif", fontSize: "clamp(32px, 3.2vw, 44px)" }}>Consultancy Projects</h2>
+          <ol className="mt-10 list-decimal border-t border-[#0B5E3C]/15 pl-6 sm:pl-8">
+            {CONSULTANCY_PROJECTS.map(({ title, ongoing, image }) => (
+              <li key={title} className="border-b border-[#0B5E3C]/15 py-8 pl-2 marker:text-lg marker:font-semibold marker:text-[#0B5E3C] sm:py-10 sm:pl-4">
+                <div className={`grid items-start gap-6 sm:gap-8 ${image ? "lg:grid-cols-2 lg:gap-12" : ""}`}>
+                  <h3 className="max-w-[960px] text-lg font-medium leading-8 text-[#1B2D23] sm:text-xl">
+                    {title}{ongoing ? <span className="consultancy-accent"> (*Ongoing)</span> : null}
+                  </h3>
+                  {image ? (
+                    <figure className="rounded-xl border border-[#0B5E3C]/10 bg-white p-3 sm:p-4">
+                      <a href={image.src} target="_blank" rel="noopener noreferrer" aria-label={`View full image: ${image.alt}`} className="block rounded-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#0B5E3C]">
+                        <img src={image.src} alt={image.alt} width={image.width} height={image.height} loading="lazy" decoding="async" className="mx-auto h-auto max-h-[460px] w-auto max-w-full object-contain" />
+                        <span className="mt-3 inline-flex items-center gap-1 text-sm font-medium consultancy-accent">View full image<ArrowUpRight aria-hidden="true" size={15} /></span>
+                      </a>
+                    </figure>
+                  ) : null}
+                </div>
+              </li>
+            ))}
+          </ol>
         </div>
       </section>
       <ConsultationDialog key={String(enquiryOpen)} open={enquiryOpen} onOpenChange={setEnquiryOpen} initialService="Project & service consultancy" />

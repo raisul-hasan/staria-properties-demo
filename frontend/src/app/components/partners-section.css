@@ -1,0 +1,48 @@
+.partners-marquee {
+  overflow: hidden;
+}
+
+.partners-track {
+  animation: partners-scroll 50s linear infinite;
+}
+
+.partners-marquee:hover .partners-track {
+  animation-play-state: paused;
+}
+
+.partners-marquee:focus-within {
+  overflow-x: auto;
+}
+
+.partners-marquee:focus-within .partners-track {
+  animation: none;
+}
+
+.partners-marquee:focus-within .partners-list-duplicate {
+  visibility: hidden;
+}
+
+.partners-marquee:focus-within .partners-fade {
+  display: none;
+}
+
+@keyframes partners-scroll {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .partners-marquee {
+    overflow-x: auto;
+  }
+
+  .partners-track {
+    animation: none;
+  }
+
+  .partners-list-duplicate,
+  .partners-fade {
+    display: none;
+  }
+}

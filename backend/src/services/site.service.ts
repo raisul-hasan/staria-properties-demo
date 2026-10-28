@@ -14,7 +14,7 @@ const defaultSite = {
     bdPhone: "+8801709993666",
     usAddress: "1 Great Neck Road, Ste#4, Great Neck, NY 11021.",
     usPhone: "+1(888)6139218",
-    email: "info@staria.com.bd"
+    email: "info@stariadevelopment.com"
   },
   navigation: [
     { label: "Home", path: "/" },
