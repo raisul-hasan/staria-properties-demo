@@ -1,3 +1,4 @@
+import { SiteImage } from "../components/shared/SiteImage";
 import { Link } from "react-router";
 import { ArrowLeft, ArrowUpRight, BookOpen, Check, ChevronRight, GraduationCap, Mail } from "lucide-react";
 import portrait from "../../assets/team/official/muzahid-director.jpg";
@@ -27,7 +28,7 @@ export default function MuzahidMonirProfilePage() {
               <a href="https://www.linkedin.com/in/s-m-muzahid-monir-bb045229/" target="_blank" rel="noopener noreferrer" className="mt-7 inline-flex min-h-11 items-center gap-2 text-base font-semibold text-[#0B5E3C] underline decoration-[#0B5E3C]/30 underline-offset-4">Connect on LinkedIn<ArrowUpRight aria-hidden="true" size={17} /></a>
             </div>
             <figure className="mx-auto overflow-hidden rounded-xl border border-[#0B5E3C]/10 bg-white" style={{ width: 240, maxWidth: "100%" }}>
-              <img src={portrait} alt="Portrait of Maj S M Muzahid Monir, Executive Director at STARIA" width={240} height={240} style={{ width: "100%", height: "auto", aspectRatio: "1 / 1", objectFit: "cover" }} />
+              <SiteImage priority src={portrait} alt="Portrait of Maj S M Muzahid Monir, Executive Director at STARIA" width={240} height={240} style={{ width: "100%", height: "auto", aspectRatio: "1 / 1", objectFit: "cover" }} />
               <figcaption className="border-t border-[#D9A11A] px-3 py-2 text-xs font-medium leading-5 text-[#0B5E3C]">Engineering. Leadership. Education.</figcaption>
             </figure>
           </div>
@@ -48,7 +49,7 @@ export default function MuzahidMonirProfilePage() {
           <div className="grid gap-7 md:grid-cols-2">
             {CAREER_CONTRIBUTIONS.map((item) => <article key={item.title} className="overflow-hidden rounded-2xl border border-[#0B5E3C]/15 bg-white">
               <figure className="mt-6 ml-6 overflow-hidden rounded-lg bg-[#F7F7F2]" style={{ width: 380, maxWidth: "calc(100% - 3rem)" }}>
-                <a href={item.image} target="_blank" rel="noopener noreferrer" aria-label={`Enlarge portfolio image for ${item.title}`} className="block"><img src={item.image} alt={item.imageAlt} loading="lazy" width={380} height={225} style={{ width: "100%", height: 225, objectFit: "contain" }} /></a>
+                <a href={item.image} target="_blank" rel="noopener noreferrer" aria-label={`Enlarge portfolio image for ${item.title}`} className="block"><SiteImage src={item.image} alt={item.imageAlt} loading="lazy" width={380} height={225} style={{ width: "100%", height: 225, objectFit: "contain" }} /></a>
                 {item.imageCaption && <figcaption className="px-2 py-2 text-xs text-[#405246]">{item.imageCaption}</figcaption>}
               </figure>
               <div className="p-6 sm:p-7">
@@ -74,7 +75,7 @@ export default function MuzahidMonirProfilePage() {
             {[
               { src: "/images/muzahid-monir/nirjhor-site-visit.webp", caption: "Nirjhor project site engagement", alt: "Military engineering personnel visiting the Nirjhor project, from the career profile" },
               { src: "/images/muzahid-monir/academic-study-visit.webp", caption: "Academic and industry engagement", alt: "University group on a bridge study visit, from the Daffodil International University career portfolio" },
-            ].map((photo) => <figure key={photo.src} className="overflow-hidden rounded-lg border border-[#0B5E3C]/10 bg-white" style={{ width: 390, maxWidth: "100%" }}><a href={photo.src} target="_blank" rel="noopener noreferrer" aria-label={`Enlarge ${photo.caption}`}><img src={photo.src} alt={photo.alt} loading="lazy" width={390} height={235} style={{ width: "100%", height: 235, objectFit: "contain" }} /></a><figcaption className="px-3 py-2 text-sm font-medium leading-6 text-[#35483C]">{photo.caption}</figcaption></figure>)}
+            ].map((photo) => <figure key={photo.src} className="overflow-hidden rounded-lg border border-[#0B5E3C]/10 bg-white" style={{ width: 390, maxWidth: "100%" }}><a href={photo.src} target="_blank" rel="noopener noreferrer" aria-label={`Enlarge ${photo.caption}`}><SiteImage src={photo.src} alt={photo.alt} loading="lazy" width={390} height={235} style={{ width: "100%", height: 235, objectFit: "contain" }} /></a><figcaption className="px-3 py-2 text-sm font-medium leading-6 text-[#35483C]">{photo.caption}</figcaption></figure>)}
           </div>
         </div>
       </section>

@@ -1,3 +1,4 @@
+import { SiteImage } from "./shared/SiteImage";
 import { motion } from "motion/react";
 import { ExternalLink } from "lucide-react";
 
@@ -5,7 +6,7 @@ import nurAlamPortrait from "../../assets/team/official/atm-nur-alam.jpg";
 import lanjuPortrait from "../../assets/team/official/mehedi-hasan-lanju.jpg";
 import bappyPortrait from "../../assets/team/official/rayhan-rashid-bappy.jpg";
 import nafeezPortrait from "../../assets/team/official/nafeez-talukder.jpg";
-import mahirulPortrait from "../../assets/team/official/mahirul-islam.jpg";
+import mahirulPortrait from "../../assets/team/official/mahirul-islam.webp";
 import nihalPortrait from "../../assets/team/official/iftikarun-nur-nihal.jpg";
 
 type TeamMember = {
@@ -65,7 +66,7 @@ function TeamMemberCard({ member, index }: { member: TeamMember; index: number }
       className={`group flex h-full flex-col overflow-hidden rounded-2xl border border-black/[0.07] bg-white shadow-[0_10px_35px_rgba(11,94,60,0.05)] transition-all duration-500 hover:-translate-y-1 hover:border-[#0B5E3C]/20 hover:shadow-[0_16px_44px_rgba(11,94,60,0.12)]`}
     >
       <div className="relative flex h-[320px] sm:h-[340px] items-center justify-center overflow-hidden bg-[#0B5E3C]">
-        <img src={member.photo} alt={member.name} loading="lazy" className="h-full w-full object-cover object-top" />
+        <SiteImage src={member.photo} alt={member.name} loading="lazy" className="h-full w-full object-cover object-top" />
         <span aria-hidden="true" className="absolute bottom-0 left-8 right-8 h-1 rounded-t-full bg-[#D9A11A]" />
       </div>
 

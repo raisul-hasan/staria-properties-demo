@@ -1,3 +1,4 @@
+import { SiteImage } from "../components/shared/SiteImage";
 import { Link, useParams } from "react-router";
 import { ArrowLeft } from "lucide-react";
 import { ProjectPhotoGallery } from "../components/ProjectPhotoGallery";
@@ -51,7 +52,7 @@ export default function DevelopmentProjectDetailsPage() {
             {project.summary && <p className="max-w-[750px] text-[0.95rem] leading-8 text-[#555555]">{project.summary}</p>}
           </header>
           <figure className="mb-14">
-            <img src={project.image} alt={project.imageAlt} className="max-h-[620px] w-full rounded-2xl bg-[#E8E8E3] object-contain" />
+            <SiteImage priority sizes="(min-width: 1440px) 1280px, calc(100vw - 48px)" src={project.image} alt={project.imageAlt} className="max-h-[620px] w-full rounded-2xl bg-[#E8E8E3] object-contain" />
             {project.imageCaption && <figcaption className="mt-3 text-xs leading-6 text-[#666666]">{project.slug === "sks-city" ? <>Illustrative image for the proposed development. Photo: <a href={SKS_IMAGE_SOURCE.url} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2">{SKS_IMAGE_SOURCE.credit}</a>.</> : project.imageCaption}</figcaption>}
           </figure>
           {visualisation ? (

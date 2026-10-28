@@ -1,3 +1,4 @@
+import { SiteImage } from "../components/shared/SiteImage";
 import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { ArrowRight, ChevronDown, MapPin, BedDouble, Bath, Maximize2, Building2, Search, Phone } from "lucide-react";
@@ -6,7 +7,7 @@ import { PageHero } from "../components/shared/PageHero";
 import { api } from "../services/api";
 import { displayLocation, displayPrice, primaryImage, useApiList } from "../services/content";
 import { ADVERTISED_PROPERTY } from "../services/advertisedProperty";
-import bashundharaFlatAd from "../../assets/properties/bashundhara-block-f-flat.png";
+import bashundharaFlatAd from "../../assets/properties/bashundhara-block-f-flat.webp";
 
 type FeaturedProperty = {
   id: string; name: string; location: string; price: string;
@@ -100,7 +101,7 @@ function AdvertisedPropertySection() {
       <div className="mx-auto max-w-[1440px] px-6 sm:px-10 xl:px-20">
         <article className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
           <Link to={`/properties/${property.slug}`} className="block overflow-hidden rounded-2xl border border-[#0B5E3C]/10 bg-[#F7F7F5] shadow-[0_12px_40px_rgba(11,94,60,0.07)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#0B5E3C]" aria-label={`View details for ${property.title}`}>
-            <img src={bashundharaFlatAd} alt="STARIA ready flat for sale in Block F, Bashundhara R/A" loading="lazy" width={2160} height={2160} className="h-auto w-full object-contain" />
+            <SiteImage src={bashundharaFlatAd} alt="STARIA ready flat for sale in Block F, Bashundhara R/A" loading="lazy" width={2160} height={2160} className="h-auto w-full object-contain" />
           </Link>
           <div>
             <div className="mb-5 flex items-center gap-3">
@@ -279,7 +280,7 @@ export default function PropertiesPage() {
       {selectedProperty && (
         <section className="bg-white py-16 border-b border-black/[0.06]">
           <div className="max-w-[1200px] mx-auto px-6 md:px-12 grid lg:grid-cols-2 gap-10 items-center">
-            <img src={selectedProperty.image} alt={selectedProperty.name} className="w-full h-[380px] object-cover rounded-3xl" />
+            <SiteImage src={selectedProperty.image} alt={selectedProperty.name} className="w-full h-[380px] object-cover rounded-3xl" />
             <div><p className="text-[#0B5E3C] uppercase tracking-[.25em] text-xs font-semibold mb-4">{selectedProperty.status}</p><h1 className="text-4xl mb-3" style={{ fontFamily: "'Gilda Display', Georgia, serif" }}>{selectedProperty.name}</h1><p className="text-[#666] mb-5 flex items-center gap-2"><MapPin size={15} /> {selectedProperty.location}</p><p className="text-3xl text-[#0B5E3C] font-semibold mb-6">{selectedProperty.price}</p><p className="text-[#555] leading-8 mb-7">{selectedProperty.description || "Contact our team for complete information about this property."}</p><div className="flex gap-3"><Link to="/contact" className="px-6 py-3 rounded-full bg-[#0B5E3C] text-white font-semibold">Request a viewing</Link><Link to="/properties" className="px-6 py-3 rounded-full border border-black/15 font-semibold">Close details</Link></div></div>
           </div>
         </section>

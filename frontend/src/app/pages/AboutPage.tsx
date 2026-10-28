@@ -1,3 +1,4 @@
+import { SiteImage } from "../components/shared/SiteImage";
 import { motion } from "motion/react";
 import { Globe, Eye, Users, Cpu, Leaf, Heart } from "lucide-react";
 import { PageHero } from "../components/shared/PageHero";
@@ -62,7 +63,7 @@ function AboutDetailSection() {
     <section className="bg-white overflow-hidden">
       <div className="max-w-[1440px] mx-auto grid lg:grid-cols-2 min-h-[700px]">
         <motion.div initial={{ opacity: 0, x: -40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, margin: "-80px" }} transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }} className="relative overflow-hidden min-h-[480px] lg:min-h-0">
-          <img src="https://images.unsplash.com/photo-1706074740295-d7a79c079562?w=1200&h=900&fit=crop&auto=format&q=92" alt="Luxury modern office interior" className="w-full h-full object-cover transition-transform duration-[1.2s] ease-out hover:scale-[1.04]" />
+          <SiteImage src="https://images.unsplash.com/photo-1706074740295-d7a79c079562?w=1200&h=900&fit=crop&auto=format&q=92" alt="Luxury modern office interior" className="w-full h-full object-cover transition-transform duration-[1.2s] ease-out hover:scale-[1.04]" />
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-white/10" />
           <motion.div initial={{ opacity: 0, scale: 0.85 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ delay: 0.5, duration: 0.6, ease: [0.22, 1, 0.36, 1] }} className="absolute bottom-8 left-8 bg-[#0B5E3C] text-white rounded-2xl px-6 py-4 shadow-2xl">
             <p className="text-[2rem] font-bold leading-none" style={{ fontFamily: "'Gilda Display', Georgia, serif" }}>2023</p>

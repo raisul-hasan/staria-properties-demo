@@ -1,3 +1,4 @@
+import { SiteImage } from "../components/shared/SiteImage";
 import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router";
 import { motion, AnimatePresence, useScroll, useTransform } from "motion/react";
@@ -160,7 +161,7 @@ function DivisionCard({ brand, title, subtitle, services, cta, to, image, dark, 
       className={`relative min-w-0 overflow-hidden rounded-3xl flex flex-col h-full ${dark ? "bg-[#082D1C] border border-white/[0.07]" : "bg-white border border-black/[0.06]"}`}
       style={{ boxShadow: hovered ? (dark ? "0 28px 64px rgba(0,0,0,0.55), 0 0 0 1px rgba(245,166,35,0.18)" : "0 28px 64px rgba(0,0,0,0.13), 0 0 0 1px rgba(11, 94, 60,0.14)") : "0 6px 24px rgba(0,0,0,0.09)", transform: hovered ? "translateY(-4px)" : "translateY(0)", transition: "transform 0.55s cubic-bezier(0.22,1,0.36,1), box-shadow 0.55s cubic-bezier(0.22,1,0.36,1)" }}>
       <div className="relative overflow-hidden shrink-0 w-full h-[200px] sm:h-[220px] xl:h-[240px]">
-        <motion.div className="absolute inset-0 bg-center bg-cover" style={{ backgroundImage: `url(${image})` }} animate={{ scale: hovered ? 1.08 : 1.0 }} transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }} />
+        <motion.div className="absolute inset-0" animate={{ scale: hovered ? 1.08 : 1.0 }} transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}><SiteImage src={image} alt="" sizes="(min-width: 1440px) 620px, (min-width: 768px) 50vw, 100vw" className="h-full w-full object-cover" /></motion.div>
         <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, rgba(0,0,0,0.28) 0%, transparent 40%, rgba(0,0,0,0.35) 100%)" }} />
         <div className="absolute inset-0" style={{ background: dark ? (imageLeft ? "linear-gradient(to right, rgba(7,13,9,0) 20%, rgba(7,13,9,0.5) 68%, rgba(7,13,9,1) 100%)" : "linear-gradient(to left, rgba(7,13,9,0) 20%, rgba(7,13,9,0.5) 68%, rgba(7,13,9,1) 100%)") : (imageLeft ? "linear-gradient(to right, rgba(255,255,255,0) 20%, rgba(255,255,255,0.5) 68%, rgba(255,255,255,1) 100%)" : "linear-gradient(to left, rgba(255,255,255,0) 20%, rgba(255,255,255,0.5) 68%, rgba(255,255,255,1) 100%)") }} />
         <div className={`absolute top-7 ${imageLeft ? "left-7" : "right-7"} w-11 h-11 rounded-[14px] flex items-center justify-center text-[0.67rem] font-bold tracking-[0.22em] backdrop-blur-sm ${dark ? "bg-[#D9A11A]/15 text-[#D9A11A] border border-[#D9A11A]/28" : "bg-white/85 text-[#0B5E3C] border border-[#0B5E3C]/20"}`} style={{ fontFamily: "'Montserrat', sans-serif" }}>{divNum}</div>
@@ -250,7 +251,7 @@ function TestimonialsSection() {
               <motion.div key={`author-${current}`} initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }} transition={{ duration: 0.4 }} className="flex items-center justify-between gap-8">
                 <div className="flex items-center gap-5">
                   <div className="relative w-14 h-14 rounded-full overflow-hidden border-2 border-[#0B5E3C]/20 shrink-0">
-                    <img src={t.photo} alt={t.name} className="w-full h-full object-cover" />
+                    <SiteImage sizes="56px" src={t.photo} alt={t.name} className="w-full h-full object-cover" />
                   </div>
                   <div>
                     <p className="text-[#1B1B1B] text-[1rem] font-semibold leading-tight" style={{ fontFamily: gilda }}>{t.name}</p>
@@ -293,7 +294,7 @@ function InteriorPreview() {
           <motion.div initial={{ opacity: 0, x: -50 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}>
             <div ref={ref} className="relative overflow-hidden rounded-3xl bg-[#D8D8D8] h-[600px]">
               <motion.div style={{ y: imgY, top: "-60px", left: 0, right: 0, bottom: "-60px" }} className="absolute will-change-transform">
-                <img src="https://images.unsplash.com/photo-1704040686428-7534b262d0d8?w=1400&h=1000&fit=crop&auto=format&q=92" alt="Luxury living room" className="w-full h-full object-cover" />
+                <SiteImage src="https://images.unsplash.com/photo-1704040686428-7534b262d0d8?w=1400&h=1000&fit=crop&auto=format&q=92" alt="Luxury living room" className="w-full h-full object-cover" />
               </motion.div>
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none rounded-3xl" />
             </div>
@@ -337,7 +338,7 @@ function HeroSection() {
   return (
     <section className="relative min-h-screen overflow-hidden flex flex-col">
       <motion.div className="absolute inset-0 will-change-transform" initial={{ scale: 1.0 }} animate={{ scale: 1.1 }} transition={{ duration: 18, ease: [0.0, 0.0, 0.2, 1] }}>
-        <img src={slide?.media.secureUrl ?? "https://images.unsplash.com/photo-1762777973560-76a142ddedef?w=1920&h=1080&fit=crop&auto=format&q=92"} alt={slide?.media.altText ?? "Staria premium real estate"} className="w-full h-full object-cover" />
+        <SiteImage priority src={slide?.media.secureUrl ?? "https://images.unsplash.com/photo-1762777973560-76a142ddedef?w=1920&h=1080&fit=crop&auto=format&q=92"} alt={slide?.media.altText ?? "Staria premium real estate"} className="w-full h-full object-cover" />
       </motion.div>
       <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-black/20" />
       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/30" />
@@ -416,7 +417,7 @@ function CompanyOverview() {
     <section className="bg-white overflow-hidden">
       <div className="max-w-[1440px] mx-auto grid lg:grid-cols-2 min-h-[700px]">
         <motion.div initial={{ opacity: 0, x: -40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, margin: "-80px" }} transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }} className="relative overflow-hidden min-h-[480px] lg:min-h-0">
-          <img src="https://images.unsplash.com/photo-1706074740295-d7a79c079562?w=1200&h=900&fit=crop&auto=format&q=92" alt="Luxury modern office interior" className="w-full h-full object-cover transition-transform duration-[1.2s] ease-out hover:scale-[1.04]" />
+          <SiteImage src="https://images.unsplash.com/photo-1706074740295-d7a79c079562?w=1200&h=900&fit=crop&auto=format&q=92" alt="Luxury modern office interior" className="w-full h-full object-cover transition-transform duration-[1.2s] ease-out hover:scale-[1.04]" />
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-white/10" />
           <motion.div initial={{ opacity: 0, scale: 0.85 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ delay: 0.5, duration: 0.6, ease: [0.22, 1, 0.36, 1] }} className="absolute bottom-8 left-8 bg-[#0B5E3C] text-white rounded-2xl px-6 py-4 shadow-2xl">
             <p className="text-[2rem] font-bold leading-none" style={{ fontFamily: gilda }}>2023</p>
@@ -524,7 +525,7 @@ function FeaturedProjectsSection() {
             <motion.div key={project.id} initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-60px" }} transition={{ duration: 0.6, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
               className="group bg-white rounded-2xl overflow-hidden border border-black/[0.06] hover:-translate-y-2.5 hover:shadow-[0_20px_60px_rgba(0,0,0,0.10)] transition-all duration-500 cursor-pointer">
               <div className="relative h-[320px] overflow-hidden bg-[#E0E0E0]">
-                <img src={project.image} alt={project.name} className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.07]" />
+                <SiteImage src={project.image} alt={project.name} className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.07]" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent" />
                 <span className={`absolute top-4 left-4 ${project.statusBg} text-white text-[0.68rem] font-semibold tracking-wider uppercase px-3 py-1.5 rounded-full`} style={{ fontFamily: dm }}>{project.status}</span>
                 <span className="absolute top-4 right-4 bg-white/15 backdrop-blur-md border border-white/25 text-white text-[0.68rem] font-medium tracking-wider uppercase px-3 py-1.5 rounded-full" style={{ fontFamily: dm }}>{project.category}</span>
@@ -635,7 +636,7 @@ function ServicesSection() {
               className="group relative bg-white rounded-2xl overflow-hidden border border-black/[0.07] hover:-translate-y-2.5 hover:shadow-[0_20px_60px_rgba(0,0,0,0.09)] transition-all duration-500 cursor-pointer">
               <span className="absolute bottom-0 left-0 z-10 h-[3px] w-0 group-hover:w-full bg-[#D9A11A] transition-all duration-500 ease-out" />
               <div className="relative h-[240px] overflow-hidden bg-[#EAEAEA]">
-                <img src={svc.image} alt={svc.title} className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.09]" />
+                <SiteImage sizes="(min-width: 1024px) 400px, (min-width: 640px) 50vw, 100vw" src={svc.image} alt={svc.title} className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.09]" />
                 <div className="absolute inset-0 bg-[#0B5E3C]/0 group-hover:bg-[#0B5E3C]/15 transition-all duration-500" />
               </div>
               <div className="p-7">

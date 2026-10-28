@@ -7,6 +7,28 @@
   NODE_VERSION = "22"
   VITE_API_URL = "/api/v1"
 
+# Vite assets and responsive images have content hashes in their filenames.
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/media/optimized/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Unversioned source media can be refreshed without a year-long browser cache.
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=3600, stale-while-revalidate=86400"
+
+[[headers]]
+  for = "/videos/*"
+  [headers.values]
+    Cache-Control = "public, max-age=3600, stale-while-revalidate=86400"
+
 # Let React Router handle direct links and page refreshes.
 # Existing images, scripts, and styles are served normally.
 [[redirects]]

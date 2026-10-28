@@ -7,7 +7,6 @@ import {
   Phone, Mail, ChevronDown,
 } from "lucide-react";
 import { StariaLogo } from "./components/shared/StariaLogo";
-import { LoadingScreen } from "./components/shared/LoadingScreen";
 import { ScrollToTop } from "./components/shared/ScrollToTop";
 import { WhatsAppButton } from "./components/shared/WhatsAppButton";
 import { RouteMetadata } from "./components/shared/RouteMetadata";
@@ -328,15 +327,9 @@ export default function Layout() {
   const [consultationOpen, setConsultationOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [loaded, setLoaded] = useState(false);
   const [siteInfo, setSiteInfo] = useState<SiteInfo | null>(null);
   const location = useLocation();
   const { scrollYProgress } = useScroll();
-
-  useEffect(() => {
-    const t = setTimeout(() => setLoaded(true), 2400);
-    return () => clearTimeout(t);
-  }, []);
 
   useEffect(() => {
     api.getSiteInfo().then(setSiteInfo).catch(() => setSiteInfo(null));
@@ -361,11 +354,6 @@ export default function Layout() {
       <a href="#main-content" className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[300] focus:bg-white focus:text-[#082D1C] focus:px-4 focus:py-3 focus:rounded-lg focus:font-semibold">
         Skip to main content
       </a>
-      {/* Loading overlay */}
-      <AnimatePresence>
-        {!loaded && <LoadingScreen />}
-      </AnimatePresence>
-
       {/* Scroll progress */}
       <motion.div
         className="fixed top-0 left-0 right-0 h-[2px] z-[200] pointer-events-none origin-left"

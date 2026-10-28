@@ -1,13 +1,14 @@
-import logoWhite from "../../../assets/brand/staria-logo-white.png";
-import logoBlack from "../../../assets/brand/staria-logo-black.png";
+import logoWhite from "../../../assets/brand/staria-logo-white.webp";
+import logoBlack from "../../../assets/brand/staria-logo-black.webp";
 
 export function StariaLogo({ light = false }: { light?: boolean }) {
   return (
     <img
       src={light ? logoWhite : logoBlack}
       alt="Staria"
-      width={light ? 3707 : 4167}
-      height={light ? 1818 : 3508}
+      width={512}
+      height={light ? 251 : 431}
+      decoding="async"
       className="block h-14 sm:h-16 w-auto max-w-full object-contain"
     />
   );

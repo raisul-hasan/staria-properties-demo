@@ -1,3 +1,4 @@
+import { SiteImage } from "./shared/SiteImage";
 import React, { useState, useRef, useCallback, useEffect } from "react";
 import { motion, AnimatePresence, useScroll, useTransform } from "motion/react";
 import {
@@ -146,7 +147,8 @@ function InteriorHeroSection() {
     <div ref={ref} className="relative overflow-hidden bg-[#1B1B1B]" style={{ height: "90vh", minHeight: 600 }}>
       {/* Parallax background */}
       <motion.div className="absolute inset-0" style={{ y: bgY }}>
-        <img
+        <SiteImage
+          priority
           src="https://images.unsplash.com/photo-1776362355123-ca966d36e29c?w=1800&h=1100&fit=crop&auto=format&q=92"
           alt="Luxurious modern living room with large windows and grand staircase"
           className="w-full h-full object-cover"
@@ -357,7 +359,7 @@ function InteriorTypeCard({
           className="w-full h-full"
         >
           <motion.div style={{ y: imgY }} className="w-full h-full">
-            <img src={image} alt={alt} className="w-full h-full object-cover" />
+            <SiteImage src={image} alt={alt} className="w-full h-full object-cover" />
           </motion.div>
         </motion.div>
 
@@ -534,7 +536,7 @@ function BeforeAfterSlider() {
       onTouchMove={(e) => move(e.touches[0].clientX)}
     >
       {/* After image — full-width base layer */}
-      <img
+      <SiteImage
         src={AFTER_IMG}
         alt="After STARIA redesign"
         className="absolute inset-0 w-full h-full object-cover"
@@ -542,7 +544,7 @@ function BeforeAfterSlider() {
       />
 
       {/* Before image — clipped to slider position */}
-      <img
+      <SiteImage
         src={BEFORE_IMG}
         alt="Before redesign"
         className="absolute inset-0 w-full h-full object-cover pointer-events-none"
@@ -767,7 +769,7 @@ function PortfolioGallerySection() {
                     transition={{ duration: 0.5, delay: i * 0.07 }}
                     className="relative overflow-hidden rounded-xl group cursor-pointer"
                   >
-                    <img
+                    <SiteImage
                       src={item.src}
                       alt={item.title}
                       className="w-full h-auto object-cover block transition-transform duration-700 group-hover:scale-105"

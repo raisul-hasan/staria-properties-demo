@@ -1,3 +1,4 @@
+import { SiteImage } from "./shared/SiteImage";
 import { Link } from "react-router";
 import { ArrowUpRight } from "lucide-react";
 import { motion } from "motion/react";
@@ -9,7 +10,7 @@ export function DevelopmentProjectCard({ project, index = 0 }: { project: Develo
   return (
     <motion.article initial={{ opacity: 0, y: 28 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: index * 0.1 }} className="group flex h-full flex-col overflow-hidden rounded-2xl border border-black/[0.07] bg-white shadow-[0_4px_18px_rgba(0,0,0,0.05)] transition-shadow duration-300 hover:shadow-[0_20px_52px_rgba(11,94,60,0.12)]" style={{ fontFamily: "'DM Sans', sans-serif" }}>
       <Link to={`/projects/${project.slug}`} aria-label={`View ${project.title}`} className="relative block overflow-hidden bg-[#F7F7F5] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-4px] focus-visible:outline-[#D9A11A]">
-        <img src={thumbnail.src} alt={thumbnail.alt} loading="lazy" className="aspect-[16/10] w-full object-cover transition-transform duration-700 group-hover:scale-[1.03] motion-reduce:transition-none" />
+        <SiteImage sizes="(min-width: 1440px) 405px, (min-width: 1280px) 30vw, (min-width: 768px) 45vw, calc(100vw - 48px)" src={thumbnail.src} alt={thumbnail.alt} loading="lazy" className="aspect-[16/10] w-full object-cover transition-transform duration-700 group-hover:scale-[1.03] motion-reduce:transition-none" />
         <span className={`absolute top-4 right-4 rounded-full px-3 py-1.5 text-xs font-semibold uppercase tracking-wider ${PROJECT_STATUS_STYLE[project.status]}`}>{project.status}</span>
         {thumbnail.caption && <span className="absolute bottom-3 left-3 rounded-full bg-black/65 px-3 py-1 text-xs text-white">{thumbnail.caption}</span>}
       </Link>

@@ -1,3 +1,4 @@
+import { SiteImage } from "./shared/SiteImage";
 import React, { useEffect, useRef, useState, useCallback } from "react";
 import { Link } from "react-router";
 import { motion, AnimatePresence, useInView } from "motion/react";
@@ -16,7 +17,7 @@ import { PARTNERS, type Partner } from "../services/partners";
 import { MUZAHID_PROFILE } from "../services/muzahidMonirProfile";
 import "./partners-section.css";
 import riadPortrait from "../../assets/team/official/riad-director.jpg";
-import shatadruPortrait from "../../assets/team/official/shatadru-director.png";
+import shatadruPortrait from "../../assets/team/official/shatadru-director.webp";
 import mujahidPortrait from "../../assets/team/official/muzahid-director.jpg";
 
 // ─── Shared typography helper ─────────────────────────────────────────────────
@@ -192,7 +193,7 @@ export function VisionMissionSection() {
             transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
             className="relative rounded-3xl overflow-hidden"
           >
-            <img
+            <SiteImage
               src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=900&h=660&fit=crop&auto=format&q=92"
               alt="STARIA Vision — landmark architecture"
               className="w-full h-full object-cover min-h-[520px]"
@@ -364,7 +365,7 @@ export function SustainabilitySection() {
             className="relative"
           >
             <div className="relative rounded-3xl overflow-hidden h-[520px] lg:h-[600px]">
-              <img
+              <SiteImage
                 src="https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=900&h=700&fit=crop&auto=format&q=92"
                 alt="Sustainable green architecture"
                 className="w-full h-full object-cover"
@@ -561,7 +562,7 @@ function TeamMemberCard({ member, index }: { member: TeamMember; index: number }
       <div className="group flex h-full flex-col overflow-hidden rounded-xl border border-black/[0.07] bg-white shadow-[0_10px_34px_rgba(11,94,60,0.04)] transition-all duration-500 hover:-translate-y-1 hover:border-[#0B5E3C]/20 hover:shadow-[0_16px_52px_rgba(11,94,60,0.10)] motion-reduce:transition-none motion-reduce:hover:translate-y-0">
         <div className="relative aspect-[6/5] overflow-hidden bg-[#F7F7F5]">
           {member.image ? (
-            <img
+            <SiteImage
               src={member.image}
               alt={`${member.name}, ${member.role} at STARIA Properties`}
               loading="lazy"
@@ -688,7 +689,7 @@ export function LeadershipSection() {
 function PartnerLogo({ partner: { name, website, logo }, duplicate = false }: { partner: Partner; duplicate?: boolean }) {
   const content = (
     <>
-      {logo ? <img src={logo.src} alt="" width={logo.width} height={logo.height} loading="lazy" decoding="async" className="h-16 w-auto max-w-28 shrink-0 object-contain sm:h-20 sm:max-w-36" /> : null}
+      {logo ? <SiteImage src={logo.src} alt="" width={logo.width} height={logo.height} loading="lazy" decoding="async" className="h-16 w-auto max-w-28 shrink-0 object-contain sm:h-20 sm:max-w-36" /> : null}
       <span className="max-w-[240px] text-sm font-semibold uppercase leading-relaxed tracking-[0.16em] sm:text-base" style={{ fontFamily: dm }}>{name}</span>
       {website ? <ArrowUpRight size={17} aria-hidden="true" className="shrink-0 text-[#0B5E3C]/60 transition-colors group-hover:text-[#0B5E3C]" /> : null}
     </>
@@ -1052,7 +1053,7 @@ export function CtaBannerSection() {
           style={{ minHeight: "420px" }}
         >
           {/* Background image */}
-          <img
+          <SiteImage
             src="https://images.unsplash.com/photo-1613977257363-707ba9348227?w=1400&h=500&fit=crop&auto=format&q=92"
             alt="STARIA premium architecture"
             className="absolute inset-0 w-full h-full object-cover"

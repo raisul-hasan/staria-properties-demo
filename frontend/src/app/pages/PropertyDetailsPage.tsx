@@ -1,3 +1,4 @@
+import { SiteImage } from "../components/shared/SiteImage";
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router";
 import { ArrowLeft, Bath, BedDouble, MapPin, Maximize2 } from "lucide-react";
@@ -58,7 +59,7 @@ function LivePropertyDetailsPage() {
           <h1 className="mb-4 text-4xl md:text-5xl text-[#082D1C]" style={{ fontFamily: "'Gilda Display', Georgia, serif" }}>{property.title}</h1>
           <p className="flex items-center gap-2 text-[#666]"><MapPin size={16} />{displayLocation(property.address)}</p>
         </div>
-        {primaryImage(property.media, "") && <img src={primaryImage(property.media, "")} alt={property.title} className="mb-10 max-h-[560px] w-full rounded-3xl object-cover" />}
+        {primaryImage(property.media, "") && <SiteImage priority src={primaryImage(property.media, "")} alt={property.title} className="mb-10 max-h-[560px] w-full rounded-3xl object-cover" />}
         <div className="grid gap-8 md:grid-cols-[1fr_300px]">
           <div>
             <div className="mb-8 flex flex-wrap gap-6 border-y border-black/10 py-5 text-[#555]">
@@ -74,7 +75,7 @@ function LivePropertyDetailsPage() {
             <button type="button" onClick={() => setViewingOpen(true)} className="block w-full rounded-full bg-[#D9A11A] px-5 py-3 text-center font-semibold text-[#1B1B1B] hover:bg-[#C08912]">Request a viewing</button>
           </aside>
         </div>
-        {property.media.length > 1 && <section className="mt-12"><h2 className="mb-6 text-2xl text-[#082D1C]">Property gallery</h2><div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3">{property.media.map((item, index) => <img key={`${item.media.secureUrl}-${index}`} src={item.media.secureUrl} alt={`${property.title} — photo ${index + 1}`} loading="lazy" className="h-64 w-full rounded-2xl object-cover" />)}</div></section>}
+        {property.media.length > 1 && <section className="mt-12"><h2 className="mb-6 text-2xl text-[#082D1C]">Property gallery</h2><div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3">{property.media.map((item, index) => <SiteImage key={`${item.media.secureUrl}-${index}`} src={item.media.secureUrl} alt={`${property.title} — photo ${index + 1}`} loading="lazy" className="h-64 w-full rounded-2xl object-cover" />)}</div></section>}
         <ConsultationDialog key={`${property.id}-${viewingOpen}`} open={viewingOpen} onOpenChange={setViewingOpen} property={property} />
       </article>}
     </div>

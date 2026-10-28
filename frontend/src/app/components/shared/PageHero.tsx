@@ -1,3 +1,4 @@
+import { SiteImage } from "./SiteImage";
 import { motion } from "motion/react";
 
 interface PageHeroProps {
@@ -19,7 +20,7 @@ export function PageHero({ eyebrow, title, titleItalic, subtitle, image, imageAl
         animate={{ scale: 1.0 }}
         transition={{ duration: 1.6, ease: [0.22, 1, 0.36, 1] }}
       >
-        <img src={image} alt={imageAlt} className="w-full h-full object-cover" />
+        <SiteImage priority src={image} alt={imageAlt} className="w-full h-full object-cover" />
       </motion.div>
 
       {/* Overlays */}

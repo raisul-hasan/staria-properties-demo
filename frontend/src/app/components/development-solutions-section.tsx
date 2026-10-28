@@ -1,3 +1,4 @@
+import { SiteImage } from "./shared/SiteImage";
 import { Link } from "react-router";
 import { DEVELOPMENT_PROJECTS } from "../services/developmentProjects";
 import { DevelopmentProjectCard } from "./DevelopmentProjectCard";
@@ -44,7 +45,7 @@ function ServiceRow({
         className="w-full h-full"
       >
         <motion.div style={{ y: imgY }} className="w-full h-full">
-          <img src={image} alt={alt} className="w-full h-full object-cover" />
+          <SiteImage src={image} alt={alt} className="w-full h-full object-cover" />
         </motion.div>
       </motion.div>
       <div className="absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent pointer-events-none" />

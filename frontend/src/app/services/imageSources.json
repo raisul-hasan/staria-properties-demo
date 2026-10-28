@@ -1,0 +1,116 @@
+{
+  "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1800&h=900&fit=crop&auto=format&q=85": {
+    "src": "/media/optimized/photo-1450101499163-c8848c66ca85-w1800-9ea9d69a85.webp",
+    "srcSet": "/media/optimized/photo-1450101499163-c8848c66ca85-w480-9c64cc7d44.webp 480w, /media/optimized/photo-1450101499163-c8848c66ca85-w960-f81032df0b.webp 960w, /media/optimized/photo-1450101499163-c8848c66ca85-w1600-fb27862b1c.webp 1600w, /media/optimized/photo-1450101499163-c8848c66ca85-w1800-9ea9d69a85.webp 1800w",
+    "width": 1800,
+    "height": 900
+  },
+  "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1920&h=900&fit=crop&auto=format&q=92": {
+    "src": "/media/optimized/photo-1486325212027-8081e485255e-w1920-76e43a1b7a.webp",
+    "srcSet": "/media/optimized/photo-1486325212027-8081e485255e-w480-a23adb9ca4.webp 480w, /media/optimized/photo-1486325212027-8081e485255e-w960-0a9f074c69.webp 960w, /media/optimized/photo-1486325212027-8081e485255e-w1600-c3b3849435.webp 1600w, /media/optimized/photo-1486325212027-8081e485255e-w1920-76e43a1b7a.webp 1920w",
+    "width": 1920,
+    "height": 900
+  },
+  "https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=1920&h=900&fit=crop&auto=format&q=92": {
+    "src": "/media/optimized/photo-1504711434969-e33886168f5c-w1920-ad962902f6.webp",
+    "srcSet": "/media/optimized/photo-1504711434969-e33886168f5c-w480-b15eefac40.webp 480w, /media/optimized/photo-1504711434969-e33886168f5c-w960-d52bc9b999.webp 960w, /media/optimized/photo-1504711434969-e33886168f5c-w1600-5fef114ff8.webp 1600w, /media/optimized/photo-1504711434969-e33886168f5c-w1920-ad962902f6.webp 1920w",
+    "width": 1920,
+    "height": 900
+  },
+  "https://images.unsplash.com/photo-1564078516393-cf04bd966897?w=1920&h=900&fit=crop&auto=format&q=92": {
+    "src": "/media/optimized/photo-1564078516393-cf04bd966897-w1920-ee2e8bfc44.webp",
+    "srcSet": "/media/optimized/photo-1564078516393-cf04bd966897-w480-afed379447.webp 480w, /media/optimized/photo-1564078516393-cf04bd966897-w960-82c6129544.webp 960w, /media/optimized/photo-1564078516393-cf04bd966897-w1600-939408ea56.webp 1600w, /media/optimized/photo-1564078516393-cf04bd966897-w1920-ee2e8bfc44.webp 1920w",
+    "width": 1920,
+    "height": 900
+  },
+  "https://images.unsplash.com/photo-1625447521754-764d517239e6?w=1920&h=900&fit=crop&auto=format&q=92": {
+    "src": "/media/optimized/photo-1625447521754-764d517239e6-w1920-09c0a58dd0.webp",
+    "srcSet": "/media/optimized/photo-1625447521754-764d517239e6-w480-61b739febf.webp 480w, /media/optimized/photo-1625447521754-764d517239e6-w960-981544ced6.webp 960w, /media/optimized/photo-1625447521754-764d517239e6-w1600-81587e1b82.webp 1600w, /media/optimized/photo-1625447521754-764d517239e6-w1920-09c0a58dd0.webp 1920w",
+    "width": 1920,
+    "height": 900
+  },
+  "https://images.unsplash.com/photo-1762777973560-76a142ddedef?w=1920&h=1080&fit=crop&auto=format&q=92": {
+    "src": "/media/optimized/photo-1762777973560-76a142ddedef-w1920-24f0e01573.webp",
+    "srcSet": "/media/optimized/photo-1762777973560-76a142ddedef-w480-950e8cdd12.webp 480w, /media/optimized/photo-1762777973560-76a142ddedef-w960-8c0253cb15.webp 960w, /media/optimized/photo-1762777973560-76a142ddedef-w1600-9486c81c70.webp 1600w, /media/optimized/photo-1762777973560-76a142ddedef-w1920-24f0e01573.webp 1920w",
+    "width": 1920,
+    "height": 1080
+  },
+  "https://images.unsplash.com/photo-1776362355123-ca966d36e29c?w=1800&h=1100&fit=crop&auto=format&q=92": {
+    "src": "/media/optimized/photo-1776362355123-ca966d36e29c-w1800-11a7d81de5.webp",
+    "srcSet": "/media/optimized/photo-1776362355123-ca966d36e29c-w480-4d80e320ce.webp 480w, /media/optimized/photo-1776362355123-ca966d36e29c-w960-55888b5ceb.webp 960w, /media/optimized/photo-1776362355123-ca966d36e29c-w1600-5b0f5fb972.webp 1600w, /media/optimized/photo-1776362355123-ca966d36e29c-w1800-11a7d81de5.webp 1800w",
+    "width": 1800,
+    "height": 1100
+  },
+  "/images/projects/cafe-cover.webp": {
+    "src": "/media/optimized/cafe-cover-w1280-a71d6d8b7e.webp",
+    "srcSet": "/media/optimized/cafe-cover-w480-de7c1c5ed2.webp 480w, /media/optimized/cafe-cover-w960-32c44070f1.webp 960w, /media/optimized/cafe-cover-w1280-a71d6d8b7e.webp 1280w",
+    "width": 1280,
+    "height": 720
+  },
+  "/images/projects/after-047.webp": {
+    "src": "/media/optimized/after-047-w1600-3bc0364281.webp",
+    "srcSet": "/media/optimized/after-047-w480-72d9f59768.webp 480w, /media/optimized/after-047-w960-598282de64.webp 960w, /media/optimized/after-047-w1600-3bc0364281.webp 1600w",
+    "width": 1600,
+    "height": 1200
+  },
+  "/images/projects/sks-city-concept.webp": {
+    "src": "/media/optimized/sks-city-concept-w1600-ceab8ba611.webp",
+    "srcSet": "/media/optimized/sks-city-concept-w480-bc0a7ed35a.webp 480w, /media/optimized/sks-city-concept-w960-1dac063732.webp 960w, /media/optimized/sks-city-concept-w1600-ceab8ba611.webp 1600w",
+    "width": 1600,
+    "height": 1067
+  },
+  "/images/projects/3d/office-conference-room-03.webp": {
+    "src": "/media/optimized/office-conference-room-03-w1402-0a7d8c5c46.webp",
+    "srcSet": "/media/optimized/office-conference-room-03-w480-65bb7b5555.webp 480w, /media/optimized/office-conference-room-03-w960-e954fc0906.webp 960w, /media/optimized/office-conference-room-03-w1402-0a7d8c5c46.webp 1402w",
+    "width": 1402,
+    "height": 1122
+  },
+  "/images/consultancy/planning.webp": {
+    "src": "/media/optimized/planning-w1600-66bf79e591.webp",
+    "srcSet": "/media/optimized/planning-w480-208059cc80.webp 480w, /media/optimized/planning-w960-ed3a8fde97.webp 960w, /media/optimized/planning-w1600-66bf79e591.webp 1600w",
+    "width": 1600,
+    "height": 1200
+  },
+  "/images/consultancy/discussion.webp": {
+    "src": "/media/optimized/discussion-w1400-9099210e70.webp",
+    "srcSet": "/media/optimized/discussion-w480-da849d6176.webp 480w, /media/optimized/discussion-w960-6dda11d091.webp 960w, /media/optimized/discussion-w1400-9099210e70.webp 1400w",
+    "width": 1400,
+    "height": 2100
+  },
+  "/images/consultancy/projects/barisal-drainage-improvement.png": {
+    "src": "/media/optimized/barisal-drainage-improvement-w1600-8cd39f82ae.webp",
+    "srcSet": "/media/optimized/barisal-drainage-improvement-w480-f9b51039af.webp 480w, /media/optimized/barisal-drainage-improvement-w960-52f73207f4.webp 960w, /media/optimized/barisal-drainage-improvement-w1600-8cd39f82ae.webp 1600w",
+    "width": 1600,
+    "height": 527
+  },
+  "/images/consultancy/projects/bay-watch-hotel-feasibility.png": {
+    "src": "/media/optimized/bay-watch-hotel-feasibility-w1498-f9918eb7b5.webp",
+    "srcSet": "/media/optimized/bay-watch-hotel-feasibility-w480-a9f28c9454.webp 480w, /media/optimized/bay-watch-hotel-feasibility-w960-5161ba16cf.webp 960w, /media/optimized/bay-watch-hotel-feasibility-w1498-f9918eb7b5.webp 1498w",
+    "width": 1498,
+    "height": 747
+  },
+  "/images/consultancy/projects/kalshi-flyover-feasibility.png": {
+    "src": "/media/optimized/kalshi-flyover-feasibility-w505-fd6626c044.webp",
+    "srcSet": "/media/optimized/kalshi-flyover-feasibility-w480-c2f39b76c1.webp 480w, /media/optimized/kalshi-flyover-feasibility-w505-fd6626c044.webp 505w",
+    "width": 505,
+    "height": 851
+  },
+  "/images/consultancy/projects/marine-drive-flyover-eia.png": {
+    "src": "/media/optimized/marine-drive-flyover-eia-w1168-03bfc0a8f4.webp",
+    "srcSet": "/media/optimized/marine-drive-flyover-eia-w480-4637044897.webp 480w, /media/optimized/marine-drive-flyover-eia-w960-47f5e8dc8b.webp 960w, /media/optimized/marine-drive-flyover-eia-w1168-03bfc0a8f4.webp 1168w",
+    "width": 1168,
+    "height": 802
+  },
+  "/images/consultancy/projects/marine-drive-road-feasibility.png": {
+    "src": "/media/optimized/marine-drive-road-feasibility-w1116-de8fdb5330.webp",
+    "srcSet": "/media/optimized/marine-drive-road-feasibility-w480-d0d79d11bd.webp 480w, /media/optimized/marine-drive-road-feasibility-w960-5ca2deb5b7.webp 960w, /media/optimized/marine-drive-road-feasibility-w1116-de8fdb5330.webp 1116w",
+    "width": 1116,
+    "height": 672
+  },
+  "/images/consultancy/projects/teknaf-tourist-centers.png": {
+    "src": "/media/optimized/teknaf-tourist-centers-w1347-643926d6d5.webp",
+    "srcSet": "/media/optimized/teknaf-tourist-centers-w480-add6a11d2e.webp 480w, /media/optimized/teknaf-tourist-centers-w960-c700da047a.webp 960w, /media/optimized/teknaf-tourist-centers-w1347-643926d6d5.webp 1347w",
+    "width": 1347,
+    "height": 811
+  }
+}

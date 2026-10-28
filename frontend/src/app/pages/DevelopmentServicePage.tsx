@@ -1,3 +1,4 @@
+import { SiteImage } from "../components/shared/SiteImage";
 import { useState } from "react";
 import { Link, useParams } from "react-router";
 import { ArrowLeft, ArrowRight, CheckCheck } from "lucide-react";
@@ -16,7 +17,7 @@ export default function DevelopmentServicePage() {
         <p className="mb-4 text-sm uppercase tracking-widest text-[#0B5E3C]">{service.category}</p>
         <h1 className="mb-5 text-4xl md:text-5xl text-[#082D1C]" style={{ fontFamily: "'Gilda Display', Georgia, serif" }}>{service.title}</h1>
         <p className="mb-10 text-lg text-[#666]">{service.subtitle}</p>
-        <img src={service.image} alt={service.alt} className="mb-12 max-h-[520px] w-full rounded-3xl object-cover" />
+        <SiteImage priority src={service.image} alt={service.alt} className="mb-12 max-h-[520px] w-full rounded-3xl object-cover" />
         <div className="grid gap-10 md:grid-cols-[1fr_300px]">
           <div><h2 className="mb-4 text-2xl text-[#082D1C]">About this service</h2><p className="mb-8 leading-8 text-[#555]">{service.desc}</p>
             <h2 className="mb-5 text-2xl text-[#082D1C]">What we offer</h2><ul className="space-y-4">{service.features.map((feature) => <li key={feature} className="flex items-start gap-3 leading-7 text-[#555]"><CheckCheck size={18} className="mt-1 shrink-0 text-[#0B5E3C]" />{feature}</li>)}</ul>

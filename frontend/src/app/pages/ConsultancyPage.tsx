@@ -1,3 +1,4 @@
+import { SiteImage } from "../components/shared/SiteImage";
 import { useState } from "react";
 import { ArrowUpRight, Phone } from "lucide-react";
 import { ConsultationDialog } from "../components/shared/ConsultationDialog";
@@ -33,7 +34,7 @@ export default function ConsultancyPage() {
             <p className="mt-6 text-base text-[#1B2D23]">Speak with us: <a href={`tel:${BD_PHONE_TEL}`} className="ml-1 font-medium text-[#1B2D23] underline decoration-[#0B5E3C]/40 underline-offset-4 hover:text-[#1B2D23]">{BD_PHONE}</a></p>
           </div>
           <figure className="overflow-hidden rounded-xl border border-black/[0.06] bg-[#E6E7DF]">
-            <img src="/images/consultancy/planning.webp" alt="A close-up of architectural plans being discussed and reviewed" width={1800} height={1350} className="aspect-[4/3] w-full object-cover lg:aspect-[4/3]" />
+            <SiteImage priority sizes="(min-width: 1024px) 50vw, 100vw" src="/images/consultancy/planning.webp" alt="A close-up of architectural plans being discussed and reviewed" width={1800} height={1350} className="aspect-[4/3] w-full object-cover lg:aspect-[4/3]" />
           </figure>
         </div>
       </section>
@@ -41,7 +42,7 @@ export default function ConsultancyPage() {
       <section className="consultancy-support bg-white py-16 md:py-24" aria-labelledby="consultancy-support-title">
         <div className="mx-auto grid max-w-[1440px] items-center gap-10 px-6 sm:px-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16 xl:gap-24 xl:px-20">
           <figure className="overflow-hidden rounded-xl bg-[#E6E7DF]">
-            <img src="/images/consultancy/discussion.webp" alt="Colleagues reviewing project drawings together around a table" width={1400} height={2100} loading="lazy" className="aspect-[4/3] w-full object-cover object-center lg:aspect-[5/4]" />
+            <SiteImage sizes="(min-width: 1024px) 50vw, 100vw" src="/images/consultancy/discussion.webp" alt="Colleagues reviewing project drawings together around a table" width={1400} height={2100} loading="lazy" className="aspect-[4/3] w-full object-cover object-center lg:aspect-[5/4]" />
           </figure>
           <div>
             <p className="mb-4 text-sm font-semibold uppercase tracking-[0.16em] consultancy-accent">A little clarity goes a long way</p>
@@ -74,7 +75,7 @@ export default function ConsultancyPage() {
                   {image ? (
                     <figure className="rounded-xl border border-[#0B5E3C]/10 bg-white p-3 sm:p-4">
                       <a href={image.src} target="_blank" rel="noopener noreferrer" aria-label={`View full image: ${image.alt}`} className="block rounded-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#0B5E3C]">
-                        <img src={image.src} alt={image.alt} width={image.width} height={image.height} loading="lazy" decoding="async" className="mx-auto h-auto max-h-[460px] w-auto max-w-full object-contain" />
+                        <SiteImage sizes="(min-width: 1024px) 540px, calc(100vw - 80px)" src={image.src} alt={image.alt} width={image.width} height={image.height} loading="lazy" decoding="async" className="mx-auto h-auto max-h-[460px] w-auto max-w-full object-contain" />
                         <span className="mt-3 inline-flex items-center gap-1 text-sm font-medium consultancy-accent">View full image<ArrowUpRight aria-hidden="true" size={15} /></span>
                       </a>
                     </figure>
